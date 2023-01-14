@@ -1,0 +1,4 @@
+/EF.DataAccessLibrary/bin/
+/EF.DataAccessLibrary/obj/
+*.json
+*.csproj
