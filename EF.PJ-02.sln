@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF.DataAccessLibrary", "EF.DataAccessLibrary\EF.DataAccessLibrary.csproj", "{74988C5F-1581-4865-AB11-CBE9FEA9EA62}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF.Web", "EF.Web\EF.Web.csproj", "{DE4B553B-A154-48C1-8078-FE7EF7A48FED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{74988C5F-1581-4865-AB11-CBE9FEA9EA62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74988C5F-1581-4865-AB11-CBE9FEA9EA62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74988C5F-1581-4865-AB11-CBE9FEA9EA62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE4B553B-A154-48C1-8078-FE7EF7A48FED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE4B553B-A154-48C1-8078-FE7EF7A48FED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE4B553B-A154-48C1-8078-FE7EF7A48FED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE4B553B-A154-48C1-8078-FE7EF7A48FED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

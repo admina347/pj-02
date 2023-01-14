@@ -1,4 +1,7 @@
 /EF.DataAccessLibrary/bin/
 /EF.DataAccessLibrary/obj/
+/EF.Web/bin/
+/EF.Web/obj/
 *.json
 *.csproj
+*.??-template
