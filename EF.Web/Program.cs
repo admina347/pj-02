@@ -1,7 +1,13 @@
+using EF.DataAccessLibrary.Dataaccess;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+//
+builder.Services.AddDbContext<LibraryContext>(options =>
+  options.UseSqlServer(builder.Configuration.GetConnectionString("LibraryContext")));
 
 var app = builder.Build();
 
