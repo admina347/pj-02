@@ -4,6 +4,6 @@ namespace EF.DataAccessLibrary.Models
     {
         public int Id { get; set; }
         public string Title { get; set; }
-        public DateOnly PublicationDate { get; set; }
+        public DateTimeOffset PublicationDate { get; set; }
     }
 }

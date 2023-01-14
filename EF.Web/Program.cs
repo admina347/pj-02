@@ -7,7 +7,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 //
 builder.Services.AddDbContext<LibraryContext>(options =>
-  options.UseSqlServer(builder.Configuration.GetConnectionString("LibraryContext")));
+  options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
+
+/* builder.Services.AddDbContext<LibraryContext>(
+  options =>
+      options.UseSqlServer(
+          builder.Configuration.GetConnectionString("LibraryContext"),
+          b => b.MigrationsAssembly("EF.Web")));
+          //b => b.MigrationsAssembly("EF.DataAccessLibrary"))); */
 
 var app = builder.Build();
 
