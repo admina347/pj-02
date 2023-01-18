@@ -7,6 +7,8 @@ namespace EF.DataAccessLibrary.Dataaccess
 {
     public class LibraryContext : DbContext
     {
+        internal User user1;
+
         public LibraryContext(DbContextOptions options) : base(options) {}
         public DbSet<User> Users { get; set; }
         public DbSet<Book> Books { get; set; }
