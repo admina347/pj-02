@@ -1,0 +1,2 @@
+из папки EF.Web
+dotnet ef migrations add ModifyAuthors --project ../EF.DataAccessLibrary/ 
