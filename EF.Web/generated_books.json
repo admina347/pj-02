@@ -1,7 +1,7 @@
 [
   {
     "Title": "Мастер и Маргарита",
-    "PublicationDate": "1929",
+    "PublicationDate": "1929-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Михаил",
@@ -31,7 +31,7 @@
   },
   {
     "Title": "Собачье сердце",
-    "PublicationDate": "1925",
+    "PublicationDate": "1925-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Михаил",
@@ -55,7 +55,7 @@
   },
   {
     "Title": "Двенадцать стульев",
-    "PublicationDate": "1928",
+    "PublicationDate": "1928-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Илья",
@@ -83,7 +83,7 @@
   },
   {
     "Title": "Мёртвые души",
-    "PublicationDate": "1842",
+    "PublicationDate": "1842-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Николай",
@@ -107,7 +107,7 @@
   },
   {
     "Title": "Граф Монте-Кристо",
-    "PublicationDate": "1844",
+    "PublicationDate": "1844-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Александр",
@@ -128,7 +128,7 @@
   },
   {
     "Title": "Золотой теленок",
-    "PublicationDate": "1931",
+    "PublicationDate": "1931-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Илья",
@@ -156,7 +156,7 @@
   },
   {
     "Title": "Три товарища",
-    "PublicationDate": "1936",
+    "PublicationDate": "1936-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Эрих Мария",
@@ -177,7 +177,7 @@
   },
   {
     "Title": "Отверженные",
-    "PublicationDate": "1862",
+    "PublicationDate": "1862-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Виктор",
@@ -201,7 +201,7 @@
   },
   {
     "Title": "Преступление и наказание",
-    "PublicationDate": "1866",
+    "PublicationDate": "1866-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Федор",
@@ -225,7 +225,7 @@
   },
   {
     "Title": "Война и мир",
-    "PublicationDate": "1865",
+    "PublicationDate": "1865-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Лев",
@@ -249,7 +249,7 @@
   },
   {
     "Title": "Евгений Онегин",
-    "PublicationDate": "1825",
+    "PublicationDate": "1825-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Александр",
@@ -273,7 +273,7 @@
   },
   {
     "Title": "Ревизор",
-    "PublicationDate": "1836",
+    "PublicationDate": "1836-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Николай",
@@ -294,7 +294,7 @@
   },
   {
     "Title": "Повести Белкина",
-    "PublicationDate": "1831",
+    "PublicationDate": "1831-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Александр",
@@ -321,7 +321,7 @@
   },
   {
     "Title": "Отцы и дети",
-    "PublicationDate": "1860",
+    "PublicationDate": "1860-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Иван",
@@ -339,7 +339,7 @@
   },
   {
     "Title": "Село Степанчиково и его обитатели",
-    "PublicationDate": "1859",
+    "PublicationDate": "1859-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Федор",
@@ -363,7 +363,7 @@
   },
   {
     "Title": "Палата № 6",
-    "PublicationDate": "1892",
+    "PublicationDate": "1892-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Антон",
@@ -384,7 +384,7 @@
   },
   {
     "Title": "Три мушкетера",
-    "PublicationDate": "1844",
+    "PublicationDate": "1844-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Александр",
@@ -408,7 +408,7 @@
   },
   {
     "Title": "Братья Карамазовы",
-    "PublicationDate": "1879",
+    "PublicationDate": "1879-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Федор",
@@ -438,7 +438,7 @@
   },
   {
     "Title": "Идиот",
-    "PublicationDate": "1868",
+    "PublicationDate": "1868-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Федор",
@@ -462,7 +462,7 @@
   },
   {
     "Title": "Собака Баскервилей",
-    "PublicationDate": "1901",
+    "PublicationDate": "1901-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Артур",
@@ -483,7 +483,7 @@
   },
   {
     "Title": "Рудин",
-    "PublicationDate": "1855",
+    "PublicationDate": "1855-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Иван",
@@ -504,7 +504,7 @@
   },
   {
     "Title": "Приключения Шерлока Холмса",
-    "PublicationDate": "1887",
+    "PublicationDate": "1887-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Артур",
@@ -525,7 +525,7 @@
   },
   {
     "Title": "Дубровский",
-    "PublicationDate": "1833",
+    "PublicationDate": "1833-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Александр",
@@ -549,7 +549,7 @@
   },
   {
     "Title": "Драма на охоте",
-    "PublicationDate": "1884",
+    "PublicationDate": "1884-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Антон",
@@ -573,7 +573,7 @@
   },
   {
     "Title": "Капитанская дочка",
-    "PublicationDate": "1836",
+    "PublicationDate": "1836-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Александр",
@@ -600,7 +600,7 @@
   },
   {
     "Title": "Горе от ума",
-    "PublicationDate": "1828",
+    "PublicationDate": "1828-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Александр",
@@ -621,7 +621,7 @@
   },
   {
     "Title": "Униженные и оскорблённые",
-    "PublicationDate": "1861",
+    "PublicationDate": "1861-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Федор",
@@ -642,7 +642,7 @@
   },
   {
     "Title": "Дворянское гнездо",
-    "PublicationDate": "1859",
+    "PublicationDate": "1859-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Иван",
@@ -663,7 +663,7 @@
   },
   {
     "Title": "Воскресение",
-    "PublicationDate": "1899",
+    "PublicationDate": "1899-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Лев",
@@ -681,7 +681,7 @@
   },
   {
     "Title": "Рассказы",
-    "PublicationDate": "1883",
+    "PublicationDate": "1883-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Антон",
@@ -708,7 +708,7 @@
   },
   {
     "Title": "Триумфальная арка",
-    "PublicationDate": "1945",
+    "PublicationDate": "1945-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Эрих Мария",
@@ -729,7 +729,7 @@
   },
   {
     "Title": "Подросток",
-    "PublicationDate": "1875",
+    "PublicationDate": "1875-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Федор",
@@ -753,7 +753,7 @@
   },
   {
     "Title": "Старик и море",
-    "PublicationDate": "1952",
+    "PublicationDate": "1952-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Эрнест",
@@ -771,7 +771,7 @@
   },
   {
     "Title": "Анна Каренина",
-    "PublicationDate": "1873",
+    "PublicationDate": "1873-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Лев",
@@ -792,7 +792,7 @@
   },
   {
     "Title": "Двадцать тысяч лье под водой",
-    "PublicationDate": "1869",
+    "PublicationDate": "1869-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Жюль",
@@ -816,7 +816,7 @@
   },
   {
     "Title": "А зори здесь тихие",
-    "PublicationDate": "1969",
+    "PublicationDate": "1969-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Борис",
@@ -837,7 +837,7 @@
   },
   {
     "Title": "Робинзон Крузо",
-    "PublicationDate": "1719",
+    "PublicationDate": "1719-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Даниель",
@@ -861,7 +861,7 @@
   },
   {
     "Title": "Герой нашего времени",
-    "PublicationDate": "1839",
+    "PublicationDate": "1839-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Михаил",
@@ -882,7 +882,7 @@
   },
   {
     "Title": "Джейн Эйр",
-    "PublicationDate": "1847",
+    "PublicationDate": "1847-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Шарлотта",
@@ -903,7 +903,7 @@
   },
   {
     "Title": "Руслан и Людмила",
-    "PublicationDate": "1820",
+    "PublicationDate": "1820-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Александр",
@@ -936,7 +936,7 @@
   },
   {
     "Title": "Дети капитана Гранта",
-    "PublicationDate": "1868",
+    "PublicationDate": "1868-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Жюль",
@@ -960,7 +960,7 @@
   },
   {
     "Title": "Бесы",
-    "PublicationDate": "1870",
+    "PublicationDate": "1870-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Федор",
@@ -981,7 +981,7 @@
   },
   {
     "Title": "Черный обелиск",
-    "PublicationDate": "1956",
+    "PublicationDate": "1956-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Эрих Мария",
@@ -1005,7 +1005,7 @@
   },
   {
     "Title": "Тихий Дон",
-    "PublicationDate": "1926",
+    "PublicationDate": "1926-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Михаил",
@@ -1035,7 +1035,7 @@
   },
   {
     "Title": "Виконт де Бражелон, или Десять лет спустя",
-    "PublicationDate": "1847",
+    "PublicationDate": "1847-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Александр",
@@ -1059,7 +1059,7 @@
   },
   {
     "Title": "Двадцать лет спустя",
-    "PublicationDate": "1845",
+    "PublicationDate": "1845-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Александр",
@@ -1083,7 +1083,7 @@
   },
   {
     "Title": "Обломов",
-    "PublicationDate": "1848",
+    "PublicationDate": "1848-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Иван",
@@ -1101,7 +1101,7 @@
   },
   {
     "Title": "Белый Клык",
-    "PublicationDate": "1906",
+    "PublicationDate": "1906-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Джек",
@@ -1125,7 +1125,7 @@
   },
   {
     "Title": "Детство. Отрочество. Юность",
-    "PublicationDate": "1852",
+    "PublicationDate": "1852-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Лев",
@@ -1149,7 +1149,7 @@
   },
   {
     "Title": "Вишневый сад",
-    "PublicationDate": "1903",
+    "PublicationDate": "1903-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Антон",
@@ -1173,7 +1173,7 @@
   },
   {
     "Title": "Белая гвардия",
-    "PublicationDate": "1924",
+    "PublicationDate": "1924-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Михаил",
@@ -1197,7 +1197,7 @@
   },
   {
     "Title": "Республика ШКИД",
-    "PublicationDate": "1926",
+    "PublicationDate": "1926-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Григорий",
@@ -1225,7 +1225,7 @@
   },
   {
     "Title": "Два капитана",
-    "PublicationDate": "1938",
+    "PublicationDate": "1938-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Вениамин",
@@ -1252,7 +1252,7 @@
   },
   {
     "Title": "Про Федота-стрельца, удалого молодца",
-    "PublicationDate": "1985",
+    "PublicationDate": "1985-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Леонид",
@@ -1282,7 +1282,7 @@
   },
   {
     "Title": "Семнадцать мгновений весны",
-    "PublicationDate": "1969",
+    "PublicationDate": "1969-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Юлиан",
@@ -1300,7 +1300,7 @@
   },
   {
     "Title": "Земля Санникова",
-    "PublicationDate": "1924",
+    "PublicationDate": "1924-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Владимир",
@@ -1321,7 +1321,7 @@
   },
   {
     "Title": "Игрок",
-    "PublicationDate": "1866",
+    "PublicationDate": "1866-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Федор",
@@ -1339,7 +1339,7 @@
   },
   {
     "Title": "Графиня де Монсоро",
-    "PublicationDate": "1846",
+    "PublicationDate": "1846-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Александр",
@@ -1363,7 +1363,7 @@
   },
   {
     "Title": "Вечера на хуторе близ Диканьки",
-    "PublicationDate": "1831",
+    "PublicationDate": "1831-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Николай",
@@ -1384,7 +1384,7 @@
   },
   {
     "Title": "Пикник на обочине",
-    "PublicationDate": "1972",
+    "PublicationDate": "1972-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Аркадий",
@@ -1409,7 +1409,7 @@
   },
   {
     "Title": "Пиковая дама",
-    "PublicationDate": "1834",
+    "PublicationDate": "1834-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Александр",
@@ -1433,7 +1433,7 @@
   },
   {
     "Title": "Солярис",
-    "PublicationDate": "1861",
+    "PublicationDate": "1861-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Станислав",
@@ -1457,7 +1457,7 @@
   },
   {
     "Title": "Пётр Первый",
-    "PublicationDate": "1929",
+    "PublicationDate": "1929-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Алексей",
@@ -1478,7 +1478,7 @@
   },
   {
     "Title": "Судьба человека",
-    "PublicationDate": "1957",
+    "PublicationDate": "1957-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Михаил",
@@ -1499,7 +1499,7 @@
   },
   {
     "Title": "Дядя Ваня",
-    "PublicationDate": "1896",
+    "PublicationDate": "1896-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Антон",
@@ -1520,7 +1520,7 @@
   },
   {
     "Title": "Волшебник Изумрудного города",
-    "PublicationDate": "1939",
+    "PublicationDate": "1939-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Александр",
@@ -1544,7 +1544,7 @@
   },
   {
     "Title": "Возвращение Шерлока Холмса",
-    "PublicationDate": "1905",
+    "PublicationDate": "1905-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Артур",
@@ -1571,7 +1571,7 @@
   },
   {
     "Title": "Тарас Бульба",
-    "PublicationDate": "1835",
+    "PublicationDate": "1835-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Николай",
@@ -1592,7 +1592,7 @@
   },
   {
     "Title": "Человек-амфибия",
-    "PublicationDate": "1928",
+    "PublicationDate": "1928-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Александр",
@@ -1616,7 +1616,7 @@
   },
   {
     "Title": "Бедные люди",
-    "PublicationDate": "1845",
+    "PublicationDate": "1845-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Федор",
@@ -1637,7 +1637,7 @@
   },
   {
     "Title": "Алые паруса",
-    "PublicationDate": "1916",
+    "PublicationDate": "1916-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Александр",
@@ -1667,7 +1667,7 @@
   },
   {
     "Title": "Хождение по мукам",
-    "PublicationDate": "1922",
+    "PublicationDate": "1922-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Алексей",
@@ -1688,7 +1688,7 @@
   },
   {
     "Title": "Записки из Мёртвого дома",
-    "PublicationDate": "1860",
+    "PublicationDate": "1860-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Федор",
@@ -1712,7 +1712,7 @@
   },
   {
     "Title": "Медный всадник",
-    "PublicationDate": "1833",
+    "PublicationDate": "1833-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Александр",
@@ -1733,7 +1733,7 @@
   },
   {
     "Title": "Борис Годунов",
-    "PublicationDate": "1825",
+    "PublicationDate": "1825-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Александр",
@@ -1760,7 +1760,7 @@
   },
   {
     "Title": "Доктор Живаго",
-    "PublicationDate": "1945",
+    "PublicationDate": "1945-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Борис",
@@ -1787,7 +1787,7 @@
   },
   {
     "Title": "Чайка",
-    "PublicationDate": "1896",
+    "PublicationDate": "1896-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Антон",
@@ -1808,7 +1808,7 @@
   },
   {
     "Title": "Морфий",
-    "PublicationDate": "1926",
+    "PublicationDate": "1926-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Михаил",
@@ -1826,7 +1826,7 @@
   },
   {
     "Title": "1984",
-    "PublicationDate": "1947",
+    "PublicationDate": "1947-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Джордж",
@@ -1847,7 +1847,7 @@
   },
   {
     "Title": "Иван Васильевич",
-    "PublicationDate": "1934",
+    "PublicationDate": "1934-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Михаил",
@@ -1871,7 +1871,7 @@
   },
   {
     "Title": "Трудно быть богом",
-    "PublicationDate": "1963",
+    "PublicationDate": "1963-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Аркадий",
@@ -1896,7 +1896,7 @@
   },
   {
     "Title": "Записки юного врача",
-    "PublicationDate": "1925",
+    "PublicationDate": "1925-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Михаил",
@@ -1914,7 +1914,7 @@
   },
   {
     "Title": "Момент истины (В августе 44-го)",
-    "PublicationDate": "1974",
+    "PublicationDate": "1974-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Владимир",
@@ -1935,7 +1935,7 @@
   },
   {
     "Title": "Бег",
-    "PublicationDate": "1926",
+    "PublicationDate": "1926-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Михаил",
@@ -1956,7 +1956,7 @@
   },
   {
     "Title": "Живые и мертвые",
-    "PublicationDate": "1959",
+    "PublicationDate": "1959-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Константин",
@@ -1977,7 +1977,7 @@
   },
   {
     "Title": "Кавказский пленник",
-    "PublicationDate": "1872",
+    "PublicationDate": "1872-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Лев",
@@ -2001,7 +2001,7 @@
   },
   {
     "Title": "Белеет парус одинокий",
-    "PublicationDate": "1936",
+    "PublicationDate": "1936-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Валентин",
@@ -2019,7 +2019,7 @@
   },
   {
     "Title": "Приключения Тома Сойера",
-    "PublicationDate": "1876",
+    "PublicationDate": "1876-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Марк",
@@ -2052,7 +2052,7 @@
   },
   {
     "Title": "Приключения Гекльберри Финна",
-    "PublicationDate": "1884",
+    "PublicationDate": "1884-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Марк",
@@ -2085,7 +2085,7 @@
   },
   {
     "Title": "Записки охотника",
-    "PublicationDate": "1852",
+    "PublicationDate": "1852-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Иван",
@@ -2109,7 +2109,7 @@
   },
   {
     "Title": "Три сестры",
-    "PublicationDate": "1900",
+    "PublicationDate": "1900-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Антон",
@@ -2130,7 +2130,7 @@
   },
   {
     "Title": "Хаджи-Мурат",
-    "PublicationDate": "1896",
+    "PublicationDate": "1896-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Лев",
@@ -2154,7 +2154,7 @@
   },
   {
     "Title": "Сорок пять",
-    "PublicationDate": "1848",
+    "PublicationDate": "1848-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Александр",
@@ -2175,7 +2175,7 @@
   },
   {
     "Title": "Бесприданница",
-    "PublicationDate": "1878",
+    "PublicationDate": "1878-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Александр",
@@ -2196,7 +2196,7 @@
   },
   {
     "Title": "Шинель",
-    "PublicationDate": "1842",
+    "PublicationDate": "1842-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Николай",
@@ -2214,7 +2214,7 @@
   },
   {
     "Title": "Таинственный остров",
-    "PublicationDate": "1874",
+    "PublicationDate": "1874-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Жюль",
@@ -2241,7 +2241,7 @@
   },
   {
     "Title": "Собор Парижской Богоматери",
-    "PublicationDate": "1831",
+    "PublicationDate": "1831-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Виктор",
@@ -2268,7 +2268,7 @@
   },
   {
     "Title": "Мартин Иден",
-    "PublicationDate": "1909",
+    "PublicationDate": "1909-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Джек",
@@ -2289,7 +2289,7 @@
   },
   {
     "Title": "Сто лет одиночества",
-    "PublicationDate": "1967",
+    "PublicationDate": "1967-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Габриэль",
@@ -2313,7 +2313,7 @@
   },
   {
     "Title": "Фауст",
-    "PublicationDate": "1774",
+    "PublicationDate": "1774-01-01T00:00:00",
     "Authors": [
         {
             "FirstName": "Иоганн Вольфганг фон",
