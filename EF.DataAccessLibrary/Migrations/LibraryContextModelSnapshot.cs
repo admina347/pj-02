@@ -34,7 +34,7 @@ namespace EF.DataAccessLibrary.Migrations
 
                     b.HasIndex("BooksId");
 
-                    b.ToTable("AuthorBook");
+                    b.ToTable("AuthorBook", (string)null);
                 });
 
             modelBuilder.Entity("BookGenre", b =>
@@ -49,7 +49,7 @@ namespace EF.DataAccessLibrary.Migrations
 
                     b.HasIndex("GenresId");
 
-                    b.ToTable("BookGenre");
+                    b.ToTable("BookGenre", (string)null);
                 });
 
             modelBuilder.Entity("EF.DataAccessLibrary.Models.Author", b =>
@@ -72,273 +72,7 @@ namespace EF.DataAccessLibrary.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Authors");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            FirstName = "Александр",
-                            LastName = "Беляев"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            FirstName = "Александр",
-                            LastName = "Грибоедов"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            FirstName = "Александр",
-                            LastName = "Грин"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            FirstName = "Александр",
-                            LastName = "Дюма"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            FirstName = "Александр",
-                            LastName = "Островский"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            FirstName = "Александр",
-                            LastName = "Пушкин"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            FirstName = "Алексей",
-                            LastName = "Толстой"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            FirstName = "Антон",
-                            LastName = "Чехов"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            FirstName = "Аркадий",
-                            LastName = "Стругацкий"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            FirstName = "Артур",
-                            LastName = "Конан Дойль"
-                        },
-                        new
-                        {
-                            Id = 12,
-                            FirstName = "Борис",
-                            LastName = "Васильев"
-                        },
-                        new
-                        {
-                            Id = 13,
-                            FirstName = "Борис",
-                            LastName = "Пастернак"
-                        },
-                        new
-                        {
-                            Id = 14,
-                            FirstName = "Борис",
-                            LastName = "Стругацкий"
-                        },
-                        new
-                        {
-                            Id = 15,
-                            FirstName = "Валентин",
-                            LastName = "Катаев"
-                        },
-                        new
-                        {
-                            Id = 16,
-                            FirstName = "Вениамин",
-                            LastName = "Каверин"
-                        },
-                        new
-                        {
-                            Id = 17,
-                            FirstName = "Виктор",
-                            LastName = "Гюго"
-                        },
-                        new
-                        {
-                            Id = 18,
-                            FirstName = "Владимир",
-                            LastName = "Богомолов"
-                        },
-                        new
-                        {
-                            Id = 19,
-                            FirstName = "Владимир",
-                            LastName = "Обручев"
-                        },
-                        new
-                        {
-                            Id = 20,
-                            FirstName = "Габриэль",
-                            LastName = "Гарсиа Маркес"
-                        },
-                        new
-                        {
-                            Id = 21,
-                            FirstName = "Григорий",
-                            LastName = "Белых"
-                        },
-                        new
-                        {
-                            Id = 22,
-                            FirstName = "Даниель",
-                            LastName = "Дефо"
-                        },
-                        new
-                        {
-                            Id = 23,
-                            FirstName = "Джек",
-                            LastName = "Лондон"
-                        },
-                        new
-                        {
-                            Id = 24,
-                            FirstName = "Джордж",
-                            LastName = "Оруэлл"
-                        },
-                        new
-                        {
-                            Id = 25,
-                            FirstName = "Евгений",
-                            LastName = "Петров"
-                        },
-                        new
-                        {
-                            Id = 26,
-                            FirstName = "Жюль",
-                            LastName = "Верн"
-                        },
-                        new
-                        {
-                            Id = 27,
-                            FirstName = "Иван",
-                            LastName = "Гончаров"
-                        },
-                        new
-                        {
-                            Id = 28,
-                            FirstName = "Иван",
-                            LastName = "Тургенев"
-                        },
-                        new
-                        {
-                            Id = 29,
-                            FirstName = "Илья",
-                            LastName = "Ильф"
-                        },
-                        new
-                        {
-                            Id = 30,
-                            FirstName = "Иоганн",
-                            LastName = "Вольфганг фон Гёте"
-                        },
-                        new
-                        {
-                            Id = 31,
-                            FirstName = "Константин",
-                            LastName = "Симонов"
-                        },
-                        new
-                        {
-                            Id = 32,
-                            FirstName = "Лев",
-                            LastName = "Толстой"
-                        },
-                        new
-                        {
-                            Id = 33,
-                            FirstName = "Леонид",
-                            LastName = "Филатов"
-                        },
-                        new
-                        {
-                            Id = 34,
-                            FirstName = "Л.",
-                            LastName = "Пантелеев"
-                        },
-                        new
-                        {
-                            Id = 35,
-                            FirstName = "Марк",
-                            LastName = "Твен"
-                        },
-                        new
-                        {
-                            Id = 36,
-                            FirstName = "Михаил",
-                            LastName = "Булгаков"
-                        },
-                        new
-                        {
-                            Id = 37,
-                            FirstName = "Михаил",
-                            LastName = "Лермонтов"
-                        },
-                        new
-                        {
-                            Id = 38,
-                            FirstName = "Михаил",
-                            LastName = "Шолохов"
-                        },
-                        new
-                        {
-                            Id = 39,
-                            FirstName = "Николай",
-                            LastName = "Гоголь"
-                        },
-                        new
-                        {
-                            Id = 40,
-                            FirstName = "Станислав",
-                            LastName = "Лем"
-                        },
-                        new
-                        {
-                            Id = 41,
-                            FirstName = "Федор",
-                            LastName = "Достоевский"
-                        },
-                        new
-                        {
-                            Id = 42,
-                            FirstName = "Шарлотта",
-                            LastName = "Бронте"
-                        },
-                        new
-                        {
-                            Id = 43,
-                            FirstName = "Эрих Мария",
-                            LastName = "Ремарк"
-                        },
-                        new
-                        {
-                            Id = 44,
-                            FirstName = "Эрнест",
-                            LastName = "Хемингуэй"
-                        },
-                        new
-                        {
-                            Id = 45,
-                            FirstName = "Юлиан",
-                            LastName = "Семенов"
-                        });
+                    b.ToTable("Author", (string)null);
                 });
 
             modelBuilder.Entity("EF.DataAccessLibrary.Models.Book", b =>
@@ -364,7 +98,7 @@ namespace EF.DataAccessLibrary.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Books");
+                    b.ToTable("Books", (string)null);
                 });
 
             modelBuilder.Entity("EF.DataAccessLibrary.Models.Genre", b =>
@@ -382,7 +116,7 @@ namespace EF.DataAccessLibrary.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Genres");
+                    b.ToTable("Genre", (string)null);
                 });
 
             modelBuilder.Entity("Models.User", b =>
@@ -405,7 +139,7 @@ namespace EF.DataAccessLibrary.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("AuthorBook", b =>
@@ -440,11 +174,9 @@ namespace EF.DataAccessLibrary.Migrations
 
             modelBuilder.Entity("EF.DataAccessLibrary.Models.Book", b =>
                 {
-                    b.HasOne("Models.User", "User")
+                    b.HasOne("Models.User", null)
                         .WithMany("Books")
                         .HasForeignKey("UserId");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Models.User", b =>

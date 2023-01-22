@@ -20,8 +20,8 @@ namespace EF.DataAccessLibrary.Models
 
         public User User { get; set; }
         //Авторов может быть несколько
-        public List<Author> Authors { get; set; } = new List<Author>();
+        public List<AuthorBook> Authors { get; set; }   // = new List<Author>();
 
-        public List<Genre> Genres { get; set; } = new List<Genre>();
+        public List<BookGenre> Genres { get; set; } // = new List<Genre>();
     }
 }

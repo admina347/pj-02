@@ -17,6 +17,6 @@ namespace EF.DataAccessLibrary.Models
         public string LastName { get; set; }
 
         // Навигационное свойство
-        public List<Book> Books { get; set; } = new List<Book>();
+        public List<AuthorBook> Books { get; set; }    // = new List<Book>();
     }
 }

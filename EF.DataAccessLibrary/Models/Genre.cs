@@ -11,6 +11,6 @@ namespace EF.DataAccessLibrary.Models
         [MaxLength(100)]
         public string Name { get; set; }
 
-        public List<Book> Books { get; set; } = new List<Book>();
+        public List<BookGenre> Books { get; set; }  // = new List<Book>();
     }
 }
