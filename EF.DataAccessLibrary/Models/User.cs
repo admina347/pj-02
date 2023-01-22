@@ -5,6 +5,7 @@ namespace Models
 {
     public class User
     {
+        [Key]
         public int Id { get; set; }
 
         [Required]
@@ -16,6 +17,6 @@ namespace Models
         [EmailAddress]
         public string Email { get; set; }
 
-        public List<Book>? Books { get; set; } = new List<Book>();
+        public List<Book> Books { get; set; } = new List<Book>();
     }
 }
