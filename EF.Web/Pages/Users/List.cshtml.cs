@@ -1,4 +1,5 @@
-using EF.DataAccessLibrary.Dataaccess;
+using EF.DataAccessLibrary.Models;
+using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace EF.Web.Pages.Users
@@ -6,32 +7,26 @@ namespace EF.Web.Pages.Users
     public class List : PageModel
     {
         private readonly ILogger<List> _logger;
-        
-        private readonly LibraryContext _db;
-        //public List<EF.DataAccessLibrary.Models.Book> Books { get; set; }
-
-        public List<EF.DataAccessLibrary.Models.User> Users { get; set; }
-        public List(ILogger<List> logger, LibraryContext db)
+        public List<User> Users { get; set; }
+        private readonly IUserRepository _userRepository;
+        /* public void OnException(ExceptionContext exceptionContext)
+        {
+            if (!exceptionContext.ExceptionHandled && exceptionContext.Exception is IndexOutOfRangeException)
+            {
+                //exceptionContext.Result = new RedirectResult("/Content/ExceptionFound.html");
+                //exceptionContext.ExceptionHandled = true;
+                ViewData["Message"] = "Ошибка: " + exceptionContext.Exception.Message;
+            }
+        } */
+        public List(ILogger<List> logger, IUserRepository userRepository)
         {
             _logger = logger;
-            _db = db;
+            _userRepository = userRepository;
         }
 
-        public void OnGet()
+        public async Task OnGet()
         {
-            GetAllUsers();
-        }
-
-        public void GetAllUsers()
-        {
-            try
-            {
-                Users = _db.Users.ToList();
-            }
-            catch (Exception ex)   
-            {
-                Console.WriteLine("Error: " + ex.Message);
-            } 
+            Users = await _userRepository.GetAllUsers();
         }
     }
 }

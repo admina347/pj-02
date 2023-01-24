@@ -1,10 +1,10 @@
 using System.ComponentModel.DataAnnotations;
+using EF.DataAccessLibrary.Models;
 
-namespace EF.DataAccessLibrary.Models
+namespace EF.Web.Models.ViewModels
 {
-    public class User
+    public class EditUserViewModel
     {
-        [Key]
         public int Id { get; set; }
 
         [Required]

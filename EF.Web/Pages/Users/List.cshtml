@@ -2,11 +2,19 @@
 @model EF.Web.Pages.Users.List
 @{
     ViewData["Title"] = "Пользователи";
+    var Message = ViewData["Message"]?.ToString();
 }
 
 <h1>@ViewData["Title"]</h1>
 
-@if (Model.Users != null && Model.Users.Any())
+@if (!string.IsNullOrWhiteSpace(Message))
+{
+    <div class="alert alert-failure" role="alert">
+        @Message
+    </div>
+}
+
+@if (Model != null && Model.Users.Any())
 {
     <table class="table">
         <thead>

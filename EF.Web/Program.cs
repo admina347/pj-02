@@ -1,4 +1,5 @@
 using EF.DataAccessLibrary.Dataaccess;
+using EF.DataAccessLibrary.Models;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +19,8 @@ builder.Services.AddDbContext<LibraryContext>(options =>
           builder.Configuration.GetConnectionString("LibraryContext"),
           b => b.MigrationsAssembly("EF.Web")));
           //b => b.MigrationsAssembly("EF.DataAccessLibrary"))); */
+//UserRepository
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 var app = builder.Build();
 
