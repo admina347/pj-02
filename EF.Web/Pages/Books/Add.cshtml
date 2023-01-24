@@ -1,0 +1,23 @@
+@page
+@model EF.Web.Pages.Books.Add
+@{
+    ViewData["Title"] = "Add New Book";
+}
+
+<h1 class="mb-3">@ViewData["Title"]</h1>
+
+<form method="post">
+    <div class="mb-3">
+        <label class="form-label">Title</label>
+        <input class="form-control" type="text" name="title" value="" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Publication Date</label>
+        <input class="form-control" type="text" name="publicationdate" value="" />
+    </div>
+
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+    </div>
+</form>

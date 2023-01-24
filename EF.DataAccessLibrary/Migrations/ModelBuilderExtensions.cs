@@ -1,6 +1,5 @@
 using EF.DataAccessLibrary.Models;
 using Microsoft.EntityFrameworkCore;
-using Models;
 
 namespace EF.DataAccessLibrary.Migrations
 {

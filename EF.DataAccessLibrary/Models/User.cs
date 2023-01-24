@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using EF.DataAccessLibrary.Models;
 
-namespace Models
+namespace EF.DataAccessLibrary.Models
 {
     public class User
     {

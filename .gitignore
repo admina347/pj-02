@@ -8,3 +8,4 @@
 *.??-template
 #!EF.Web/generated_users.json
 #!EF.Web/generated_books.json
+*.ods

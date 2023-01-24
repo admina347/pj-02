@@ -1,0 +1,35 @@
+@page
+@model EF.Web.Pages.Books.List
+@{
+    ViewData["Title"] = "Книги";
+}
+
+<h1 class="mb-3">@ViewData["Title"]</h1>
+
+@if (Model.Books != null && Model.Books.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Название</th>
+                <th>Дата публикации</th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Model.Books)
+            {
+                <tr>
+                    <td>@book.Id</td>
+                    <td>@book.Title</td>
+                    <td>@book.PublicationDate.Year</td>
+                    <td><a href="/Books/Edit/@book.Id" class="btn btn-dark">Изменить</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<div>
+    
+</div>

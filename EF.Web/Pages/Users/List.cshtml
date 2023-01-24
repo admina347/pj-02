@@ -1,0 +1,35 @@
+@page
+@model EF.Web.Pages.Users.List
+@{
+    ViewData["Title"] = "Пользователи";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@if (Model.Users != null && Model.Users.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Имя</th>
+                <th>Email address</th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model.Users)
+            {
+                <tr>
+                    <td>@user.Id</td>
+                    <td>@user.FirstName</td>
+                    <td>@user.Email</td>
+                    <td><a href="/Users/Edit/@user.Id" class="btn btn-dark">Изменить</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<div>
+    
+</div>

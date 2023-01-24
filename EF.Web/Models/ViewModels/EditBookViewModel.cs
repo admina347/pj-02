@@ -1,10 +1,10 @@
 using System.ComponentModel.DataAnnotations;
+using EF.DataAccessLibrary.Models;
 
-namespace EF.DataAccessLibrary.Models
+namespace EF.Web.Models.ViewModels
 {
-    public class Book
+    public class EditBookViewModel
     {
-        [Key]
         public int Id { get; set; }
 
         [Required]
@@ -18,8 +18,8 @@ namespace EF.DataAccessLibrary.Models
 
         public User User { get; set; }
         //Авторов может быть несколько
-        public List<AuthorBook> Authors { get; set; }   // = new List<Author>();
+        public List<AuthorBook> Authors { get; set; }
 
-        public List<BookGenre> Genres { get; set; } // = new List<Genre>();
+        public List<BookGenre> Genres { get; set; }
     }
 }

@@ -1,10 +1,5 @@
-﻿using System.Text.Json;
-using EF.DataAccessLibrary.Dataaccess;
-using EF.DataAccessLibrary.Models;
-using EF.Web.Exceptions;
-using Microsoft.AspNetCore.Mvc;
+﻿using EF.DataAccessLibrary.Dataaccess;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Models;
 
 namespace EF.Web.Pages;
 
@@ -21,6 +16,6 @@ public class IndexModel : PageModel
 
     public void OnGet()
     {
-
+        
     }    
 }
