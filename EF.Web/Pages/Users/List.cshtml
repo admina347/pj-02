@@ -1,43 +1,69 @@
 @page
 @model EF.Web.Pages.Users.List
+@using Models
 @{
     ViewData["Title"] = "Пользователи";
     var Message = ViewData["Message"]?.ToString();
+
+    Pager pager = new Pager();
+    int pageNo = 0;
+    if (ViewBag.Pager != null)
+    {
+        pager = ViewBag.Pager;
+        pageNo = pager.CurrentPage;
+    }
 }
 
 <h1>@ViewData["Title"]</h1>
 
+<div class="mb-3">
+    <!--<button type="button" class="btn btn-success">
+        Создать
+    </button>-->
+    <a href="/Users/Add" class="btn btn btn-success" role="button">Создать</a>
+    <!--<a href="/Users/Add" class="btn btn-green">Создать</a>-->
+</div>
+
 @if (!string.IsNullOrWhiteSpace(Message))
 {
     <div class="alert alert-failure" role="alert">
-        @Message
-    </div>
+    @Message
+</div>
 }
 
 @if (Model != null && Model.Users.Any())
 {
     <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Имя</th>
-                <th>Email address</th>
-                <th> </th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var user in Model.Users)
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Имя</th>
+            <th>Email address</th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.Users)
             {
                 <tr>
                     <td>@user.Id</td>
                     <td>@user.FirstName</td>
                     <td>@user.Email</td>
-                    <td><a href="/Users/Edit/@user.Id" class="btn btn-dark">Изменить</a></td>
+                    <td>
+                        <a href="/Users/Edit/@user.Id" class="btn btn-dark">Изменить</a>
+                    </td>
                 </tr>
             }
         </tbody>
     </table>
-}
-<div>
-    
+<div class="container">
+        <ul class="pagination justify-content-end">
+        @for (var i = 1; i <= Model.totalPages; i++)
+        {
+            <li class="page-item @(i == Model.currentPage ? "active" : "")">
+                <a asp-page="/Users/List" asp-route-p="@i" class="page-link">@i</a>
+            </li>
+        }
+    </ul>
 </div>
+}

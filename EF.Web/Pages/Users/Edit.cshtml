@@ -16,15 +16,18 @@
 }
 <div class="mb-3">
     <label class="form-label">Id</label>
-    <input class="form-control" type="text" asp-for="EditUserViewModel.Id" readonly/>
+    <input class="form-control" type="number" asp-for="EditUserViewModel.Id" readonly/>
 </div>
 <div class="mb-3">
     <label class="form-label">Имя</label>
     <input class="form-control" type="text" asp-for="EditUserViewModel.FirstName"/>
 </div>
-<div class="mb-3">
-    <button type="submit" class="btn btn-primary">
-        Сохранить
+<div class="mb-3 d-flex justify-content-between">
+    <button type="submit" class="btn btn-primary" asp-page-handler="Update">
+        Обновить
+    </button>
+    <button type="submit" class="btn btn-danger" asp-page-handler="Delete">
+        Удалить
     </button>
 </div>
 </form>

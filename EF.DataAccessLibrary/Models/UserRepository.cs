@@ -5,14 +5,14 @@ namespace EF.DataAccessLibrary.Models
 {
     public class UserRepository : IUserRepository
     {
-        private LibraryContext _db;
+        private readonly LibraryContext _db;
 
         public UserRepository(LibraryContext db)
         {
            _db = db;
         }
         //2.2 - Получить всех пользователей
-        public async Task<List<User>> GetAllUsers()
+        public async Task<List<User>> GetAllUsersAsync()
         {
             List<User> users = new List<User>();
             //var users = await _db.Users.ToListAsync();
@@ -23,27 +23,39 @@ namespace EF.DataAccessLibrary.Models
             catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex.Message);
-                //ViewData["Message"] = "Ошибка";
             }
             return users;
         }
         //2.1 - Получить пользователя
-        public async Task<User> GetUserById(int id)
+        public async Task<User> GetUserByIdAsync(int id)
         {
             return await _db.Users.FindAsync(id);
         }
-
         //2.5 - Оббновить пользователя
-        public async Task UpdateUser(User user)
+        public async Task UpdateUserAsync(User user)
         {
-            //var existingUser = _db.Users.FirstOrDefaultAsync(u => u.Id == user.Id);
             var existingUser = await _db.Users.FindAsync(user.Id);
             if (existingUser != null)
             {
                 //Convert ViewModel to DomainModel
-                //existingUser.Id = user.Id;
                 existingUser.FirstName = user.FirstName;
-                _db.SaveChangesAsync();
+                await _db.SaveChangesAsync();
+            }
+        }
+        //2.3 Add user
+        public async Task CreateUserAsync(User user)
+        {
+            await _db.Users.AddAsync(user);
+            await _db.SaveChangesAsync();
+        }
+        //2.4 Delete user
+        public async Task DeleteUserAsync(User user)
+        {
+            var existingUser = await _db.Users.FindAsync(user.Id);
+            if (existingUser != null)
+            {
+                _db.Users.Remove(existingUser);
+                await _db.SaveChangesAsync();
             }
         }
     }

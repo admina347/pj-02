@@ -1,4 +1,3 @@
-using EF.DataAccessLibrary.Dataaccess;
 using EF.DataAccessLibrary.Models;
 using EF.Web.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -16,7 +15,7 @@ namespace EF.Web.Pages.Users
         public EditUserViewModel EditUserViewModel { get; set; }
 
         public Edit(ILogger<Edit> logger, IUserRepository userRepository)
-        {
+        { 
             _logger = logger;
             _userRepository = userRepository;
         }
@@ -24,7 +23,7 @@ namespace EF.Web.Pages.Users
         public async Task OnGet(int id)
         {
             //User user = new User();
-            var user = await _userRepository.GetUserById(id);
+            var user = await _userRepository.GetUserByIdAsync(id);
             if (user != null)
             {
                 //Convert Domain model to View Model
@@ -44,7 +43,7 @@ namespace EF.Web.Pages.Users
             return _db.Users.FirstOrDefault(u => u.Id == id);
         } */
 
-        public async Task OnPost()
+        public async Task OnPostUpdate()
         {
             if (EditUserViewModel != null)
             {
@@ -64,10 +63,25 @@ namespace EF.Web.Pages.Users
                     FirstName = EditUserViewModel.FirstName
                 };
                 //Update User
-                await _userRepository.UpdateUser(editUser);
+                await _userRepository.UpdateUserAsync(editUser);
                 ViewData["Message"] = "Пользователь успешно обновлен!";
                 //}
             }
+        }
+        public async Task<IActionResult> OnPostDelete()
+        {
+            if (EditUserViewModel != null)
+            {
+                //Convert ViewModel to DomainModel
+                User delUser = new User()
+                {
+                    Id = EditUserViewModel.Id,
+                };
+                //Delete User
+                await _userRepository.DeleteUserAsync(delUser);
+                return RedirectToPage("/Users/List");
+            }
+            return Page();
         }
     }
 }
