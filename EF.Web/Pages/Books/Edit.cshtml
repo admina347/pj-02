@@ -26,9 +26,12 @@
     <label class="form-label">Дата публикации</label>
     <input class="form-control" type="date" asp-for="EditBookViewModel.PublicationDate"/>
 </div>
-<div class="mb-3">
-    <button type="submit" class="btn btn-primary">
-        Сохранить
+<div class="mb-3 d-flex justify-content-between">
+    <button type="submit" class="btn btn-primary" asp-page-handler="Update">
+        Обновить
+    </button>
+    <button type="submit" class="btn btn-danger" asp-page-handler="Delete">
+        Удалить
     </button>
 </div>
 </form>

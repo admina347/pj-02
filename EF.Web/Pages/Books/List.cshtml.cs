@@ -1,36 +1,33 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using EF.DataAccessLibrary.Dataaccess;
-using Microsoft.AspNetCore.Mvc;
+using EF.DataAccessLibrary.Models;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
 
 namespace EF.Web.Pages.Books
 {
     public class List : PageModel
     {
         private readonly ILogger<List> _logger;
-        private readonly LibraryContext _db;
-        public List<EF.DataAccessLibrary.Models.Book> Books { get; set; }
+        public List<Book> Books { get; set; }
 
-        public List(ILogger<List> logger, LibraryContext db)
+        public int totalPages { get; set; }
+        public int currentPage { get; set; }
+        public int pageSize { get; set; }
+
+        public int TotalPages => (int)Math.Ceiling(decimal.Divide(currentPage, pageSize));
+
+        private readonly IBookRepository _bookRepository;
+        public List(ILogger<List> logger, IBookRepository bookRepository)
         {
             _logger = logger;
-            _db = db;
+            _bookRepository = bookRepository;
         }
 
-        public void OnGet()
+        public async Task OnGetAsync(int p = 1, int s = 10)
         {
-            try
-            {
-                Books = _db.Books.ToList();
-            }
-            catch (Exception ex)   
-            {
-                Console.WriteLine("Error: " + ex.Message);
-            }         
+            var data = await _bookRepository.GetAllBooksAsync();
+            pageSize = s;
+            currentPage = p;
+            totalPages = (int)Math.Ceiling((decimal)data.Count() / (decimal)pageSize);      
+            Books = data.Skip((p - 1) * s).Take(s).ToList(); 
         }
     }
 }

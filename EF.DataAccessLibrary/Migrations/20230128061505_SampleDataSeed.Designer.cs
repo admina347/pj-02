@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EF.DataAccessLibrary.Migrations
 {
     [DbContext(typeof(LibraryContext))]
-    [Migration("20230122144623_SampleDataSeed")]
+    [Migration("20230128061505_SampleDataSeed")]
     partial class SampleDataSeed
     {
         /// <inheritdoc />
@@ -834,6 +834,31 @@ namespace EF.DataAccessLibrary.Migrations
                         {
                             AuthorId = 45,
                             BookId = 55
+                        },
+                        new
+                        {
+                            AuthorId = 10,
+                            BookId = 60
+                        },
+                        new
+                        {
+                            AuthorId = 14,
+                            BookId = 81
+                        },
+                        new
+                        {
+                            AuthorId = 34,
+                            BookId = 52
+                        },
+                        new
+                        {
+                            AuthorId = 25,
+                            BookId = 3
+                        },
+                        new
+                        {
+                            AuthorId = 25,
+                            BookId = 6
                         });
                 });
 
@@ -3557,7 +3582,7 @@ namespace EF.DataAccessLibrary.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Models.User", b =>
+            modelBuilder.Entity("EF.DataAccessLibrary.Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -3663,7 +3688,7 @@ namespace EF.DataAccessLibrary.Migrations
 
             modelBuilder.Entity("EF.DataAccessLibrary.Models.Book", b =>
                 {
-                    b.HasOne("Models.User", "User")
+                    b.HasOne("EF.DataAccessLibrary.Models.User", "User")
                         .WithMany("Books")
                         .HasForeignKey("UserId");
 
@@ -3706,7 +3731,7 @@ namespace EF.DataAccessLibrary.Migrations
                     b.Navigation("Books");
                 });
 
-            modelBuilder.Entity("Models.User", b =>
+            modelBuilder.Entity("EF.DataAccessLibrary.Models.User", b =>
                 {
                     b.Navigation("Books");
                 });

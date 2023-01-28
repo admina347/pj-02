@@ -21,6 +21,8 @@ builder.Services.AddDbContext<LibraryContext>(options =>
           //b => b.MigrationsAssembly("EF.DataAccessLibrary"))); */
 //UserRepository
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+//BookRepository
+builder.Services.AddScoped<IBookRepository, BookRepository>();
 
 var app = builder.Build();
 

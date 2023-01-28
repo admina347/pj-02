@@ -21,7 +21,7 @@ namespace EF.Web.Pages.Users
         public void OnGet()
         {
         }
-        public async Task OnPost()
+        public async Task OnPostAsync()
         {
             //Convert ViewModel to DomainModel
             User newUser = new User()

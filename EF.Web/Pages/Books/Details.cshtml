@@ -1,0 +1,38 @@
+@page "{id:int}"
+@model EF.Web.Pages.Books.Details
+@{
+    ViewData["Title"] = "Книга";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@if (Model.EditBookViewModel != null)
+{
+    <h2>@Model.EditBookViewModel.Title</h2>
+    <div class="mb-3">
+        <P>Дата издания: @Model.EditBookViewModel.PublicationDate.Year</P>
+    </div>
+    <h2>Авторы</h2>
+    @foreach (var author in Model.EditBookViewModel.Authors)
+    {
+        <div>
+            @author.Author.FirstName @author.Author.LastName
+        </div>
+    }
+    <h2>Жанры</h2>
+    <div>
+        <table class="table">
+        <tbody>
+            <tr>
+            @foreach (var genre in Model.EditBookViewModel.Genres)
+                {
+            
+                    <td>@genre.Genre.Name</td>        
+                }
+            </tr>
+        </tbody>
+    </table>
+    </div>
+}
+
+

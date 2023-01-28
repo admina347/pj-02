@@ -675,7 +675,12 @@ namespace EF.DataAccessLibrary.Migrations
                 new AuthorBook { AuthorId = 43, BookId = 31 },
                 new AuthorBook { AuthorId = 43, BookId = 43 },
                 new AuthorBook { AuthorId = 44, BookId = 33 },
-                new AuthorBook { AuthorId = 45, BookId = 55 });
+                new AuthorBook { AuthorId = 45, BookId = 55 },
+                new AuthorBook { AuthorId = 10, BookId = 60 },
+                new AuthorBook { AuthorId = 14, BookId = 81 },
+                new AuthorBook { AuthorId = 34, BookId = 52 },
+                new AuthorBook { AuthorId = 25, BookId = 3 },
+                new AuthorBook { AuthorId = 25, BookId = 6 });
             //Пользователи
             modelBuilder.Entity<User>().HasData(
                 new User { Id = 1, FirstName = "Артём", Email = "artem86@bk.ru" },

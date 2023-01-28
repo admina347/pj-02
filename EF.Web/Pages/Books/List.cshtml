@@ -6,6 +6,10 @@
 
 <h1 class="mb-3">@ViewData["Title"]</h1>
 
+<div class="mb-3">
+    <a href="/Books/Add" class="btn btn btn-success" role="button">Создать</a>
+</div>
+
 @if (Model.Books != null && Model.Books.Any())
 {
     <table class="table">
@@ -14,6 +18,7 @@
                 <th>Id</th>
                 <th>Название</th>
                 <th>Дата публикации</th>
+                <th> </th>
                 <th> </th>
             </tr>
         </thead>
@@ -25,11 +30,19 @@
                     <td>@book.Title</td>
                     <td>@book.PublicationDate.Year</td>
                     <td><a href="/Books/Edit/@book.Id" class="btn btn-dark">Изменить</a></td>
+                    <td><a href="/Books/Details/@book.Id" class="btn btn-dark">Подробно</a></td>
                 </tr>
             }
         </tbody>
     </table>
-}
-<div>
-    
+    <div class="container">
+        <ul class="pagination justify-content-end">
+        @for (var i = 1; i <= Model.totalPages; i++)
+        {
+            <li class="page-item @(i == Model.currentPage ? "active" : "")">
+                <a asp-page="/Books/List" asp-route-p="@i" class="page-link">@i</a>
+            </li>
+        }
+    </ul>
 </div>
+}

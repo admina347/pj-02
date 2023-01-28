@@ -9,7 +9,6 @@ namespace EF.Web.Pages.Users
     {
         private readonly ILogger<Edit> _logger;
         private IUserRepository _userRepository;
-        //private LibraryContext _db;
 
         [BindProperty]
         public EditUserViewModel EditUserViewModel { get; set; }
@@ -20,7 +19,7 @@ namespace EF.Web.Pages.Users
             _userRepository = userRepository;
         }
 
-        public async Task OnGet(int id)
+        public async Task OnGetAsync(int id)
         {
             //User user = new User();
             var user = await _userRepository.GetUserByIdAsync(id);
@@ -43,7 +42,7 @@ namespace EF.Web.Pages.Users
             return _db.Users.FirstOrDefault(u => u.Id == id);
         } */
 
-        public async Task OnPostUpdate()
+        public async Task OnPostUpdateAsync()
         {
             if (EditUserViewModel != null)
             {
@@ -68,7 +67,7 @@ namespace EF.Web.Pages.Users
                 //}
             }
         }
-        public async Task<IActionResult> OnPostDelete()
+        public async Task<IActionResult> OnPostDeleteAsync()
         {
             if (EditUserViewModel != null)
             {
