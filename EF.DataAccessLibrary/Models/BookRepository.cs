@@ -66,5 +66,22 @@ namespace EF.DataAccessLibrary.Models
                 await _db.SaveChangesAsync();
             }
         }
+        //Получать список книг определенного жанра и вышедших между определенными годами.
+        public async Task<List<Book>> GetBooksByGenreSatrtEndDateAsync(int genreId, DateTime sDate, DateTime eDate)
+        {
+            List<Book> books = new List<Book>();
+            /* //Проверим входные параметры
+            if (genreId == null)
+            genreId = 1;
+            // Не указана конечная дата
+            if (eDate == DateTime.MinValue)
+            eDate = DateTime.UtcNow;
+            //конечная дата меньше начальной
+            if (eDate < sDate)
+            eDate = sDate; */
+            books = await _db.Books.Where(bg => bg.Genres.Any(g => g.GenreId == genreId))
+                .Where(bg => bg.PublicationDate >= sDate && bg.PublicationDate <= eDate).ToListAsync();
+            return books;
+        }
     }
 }

@@ -14,56 +14,15 @@
             @message
         </div>
     }
-    
+
     <div class="mb-3">
         <label class="form-label">Название</label>
-        <input class="form-control" type="text" asp-for="AddBookRequest.Title"/>
+        <input class="form-control" type="text" asp-for="AddBookRequest.Title" />
     </div>
     <div class="mb-3">
         <label class="form-label">Email address</label>
-        <input class="form-control" type="date" asp-for="AddBookRequest.PublicationDate"/>
+        <input class="form-control" type="date" asp-for="AddBookRequest.PublicationDate" />
     </div>
-    <div class="mb-3">
-        <label class="form-label">Имя Автора</label>
-        <input class="form-control" type="text" asp-for="AddAuthorViewModel.FirstName"/>
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Фамилия Автора</label>
-        <input class="form-control" type="text" asp-for="AddAuthorViewModel.LastName"/>
-    </div>
-
-    <div class="form-group">
-        <div class="form-group">
-            <button type="button" class="btn btn-secondary"
-                    @onclick="@(() => student.Addresses.Add(new Address()))">
-                Add Address
-            </button>
-        </div>
-
-        @for (var i = 0; i < student.Addresses.Count; i++)
-        {
-            var index = i;
-            var address = student.Addresses[i];
-
-            <h5>Address @(i+1)</h5>
-
-            <div class="form-group">
-                <label>Street:</label>
-                <InputText class="form-control" @bind-Value="address.Street" />
-            </div>
-
-            <div class="form-group">
-                <label>City:</label>
-                <InputText class="form-control" @bind-Value="address.City" />
-            </div>
-
-            <button type="button" class="btn btn-danger"
-                    @onclick="@(() => student.Addresses.RemoveAt(index))">
-                Remove
-            </button>
-        }
-    </div>
-    
 
     <div class="mb-3">
         <button type="submit" class="btn btn-primary">Сохранить</button>

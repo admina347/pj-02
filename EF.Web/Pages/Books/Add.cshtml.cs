@@ -12,8 +12,11 @@ namespace EF.Web.Pages.Books
         [BindProperty]
         public AddBookViewModel AddBookRequest { get; set; }
 
-        [BindProperty]
-        public AddAuthorViewModel AddAuthorViewModel { get; set; }
+        //[BindProperty]
+        //public List<AddAuthorViewModel> AddAuthors { get; set; }
+
+        //[BindProperty]
+        //public List<AuthorBook> AddAuthorBook { get; set;} = new List<AuthorBook>();
         private IBookRepository _bookRepository;
 
         public Add(ILogger<Add> logger, IBookRepository bookRepository)
@@ -24,6 +27,7 @@ namespace EF.Web.Pages.Books
 
         public void OnGet()
         {
+
         }
         public async Task OnPostAsync()
         {
@@ -33,12 +37,12 @@ namespace EF.Web.Pages.Books
                 Title = AddBookRequest.Title,
                 PublicationDate = AddBookRequest.PublicationDate
             };
-            Author newAuthor = new Author()
+            /* Author newAuthor = new Author()
             {
                 FirstName = AddAuthorViewModel.FirstName,
                 LastName = AddAuthorViewModel.LastName
-            };
-            //newBook.Authors.Add(new );
+            }; */
+            //newBook.Authors.Add()
             await _bookRepository.CreateBookAsync(newBook);
             
             ViewData["Message"] = "Книга успешно добавлена!";

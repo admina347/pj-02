@@ -8,5 +8,6 @@ namespace EF.DataAccessLibrary.Models
         public Task UpdateBookAsync(Book book);
         public Task CreateBookAsync(Book book);
         public Task DeleteBookAsync(Book book);
+        public Task<List<Book>> GetBooksByGenreSatrtEndDateAsync(int genreId, DateTime sDate, DateTime eDate);
     }
 }

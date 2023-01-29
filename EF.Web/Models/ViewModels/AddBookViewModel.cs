@@ -18,7 +18,7 @@ namespace EF.Web.Models.ViewModels
 
         public User User { get; set; }
         //Авторов может быть несколько
-        public List<AuthorBook> Authors { get; set; }   // = new List<Author>();
+        public List<AuthorBook> Authors { get; set; } //= new List<Author>();
 
         public List<BookGenre> Genres { get; set; } // = new List<Genre>();
     }

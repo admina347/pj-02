@@ -1,0 +1,80 @@
+@page
+@model EF.Web.Pages.Books.Search
+@{
+    ViewData["Title"] = "Поиск";
+    var Message = ViewData["Message"]?.ToString();
+}
+
+
+@if (!string.IsNullOrWhiteSpace(Message))
+{
+    <div class="alert alert-success" role="alert">
+        @Message
+    </div>
+}
+
+@if (Model.Books != null && Model.Books.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Название</th>
+                <th>Дата публикации</th>
+                <th> </th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Model.Books)
+            {
+                <tr>
+                    <td>@book.Id</td>
+                    <td>@book.Title</td>
+                    <td>@book.PublicationDate.Year</td>
+                    <td><a href="/Books/Edit/@book.Id" class="btn btn-dark">Изменить</a></td>
+                    <td><a href="/Books/Details/@book.Id" class="btn btn-dark">Подробно</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="container">
+        <ul class="pagination justify-content-end">
+        @for (var i = 1; i <= Model.totalPages; i++)
+        {
+            <li class="page-item @(i == Model.currentPage ? "active" : "")">
+                <a asp-page="/Books/Search" asp-route-p="@i" class="page-link">@i</a>
+            </li>
+        }
+    </ul>
+</div>
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post">
+<div class="mb-3">
+
+    
+<h5>Получать список книг определенного жанра и вышедших между определенными годами.</h5>
+<table class="table">
+        <thead>
+            <tr>
+                <th>Выберите Автора</th>
+                <th>Начальная дата</th>
+                <th>Конечная дата</th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td><select class="form-select" asp-items="Model.Genres" asp-for="SearchViewModel.SelectedGenreId"></select></td>
+                    <td><input class="form-control" type="date" asp-for="SearchViewModel.SatrtDate"/></td>
+                    <td><input class="form-control" type="date" asp-for="SearchViewModel.EndDate"/></td>
+                    <td><button type="submit" class="btn btn-primary">Искать</button></td>
+                </tr>
+        </tbody>
+    </table>
+
+</div>
+</form>
