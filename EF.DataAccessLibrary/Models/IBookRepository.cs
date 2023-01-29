@@ -9,5 +9,8 @@ namespace EF.DataAccessLibrary.Models
         public Task CreateBookAsync(Book book);
         public Task DeleteBookAsync(Book book);
         public Task<List<Book>> GetBooksByGenreSatrtEndDateAsync(int genreId, DateTime sDate, DateTime eDate);
+        public Task<int> GetBooksCountByAuthorIdAsync(int id);
+        public Task<int> GetBooksCountByGenreIdAsync(int id);
+        public Task<bool> CheckBookByNameAuthorIdAsync(int id, string name);
     }
 }

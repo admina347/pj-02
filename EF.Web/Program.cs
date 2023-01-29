@@ -23,6 +23,8 @@ builder.Services.AddDbContext<LibraryContext>(options =>
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 //BookRepository
 builder.Services.AddScoped<IBookRepository, BookRepository>();
+//AuthorRepository
+builder.Services.AddScoped<IAuthorRepository, AuthorRepository>();
 //GenreRepository
 builder.Services.AddScoped<IGenreRepository, GenreRepository>();
 

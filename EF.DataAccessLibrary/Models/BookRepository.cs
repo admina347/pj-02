@@ -66,7 +66,7 @@ namespace EF.DataAccessLibrary.Models
                 await _db.SaveChangesAsync();
             }
         }
-        //Получать список книг определенного жанра и вышедших между определенными годами.
+        //Получить список книг определенного жанра и вышедших между определенными годами.
         public async Task<List<Book>> GetBooksByGenreSatrtEndDateAsync(int genreId, DateTime sDate, DateTime eDate)
         {
             List<Book> books = new List<Book>();
@@ -82,6 +82,35 @@ namespace EF.DataAccessLibrary.Models
             books = await _db.Books.Where(bg => bg.Genres.Any(g => g.GenreId == genreId))
                 .Where(bg => bg.PublicationDate >= sDate && bg.PublicationDate <= eDate).ToListAsync();
             return books;
+        }
+        //Получить количество книг определенного автора в библиотеке.
+        public async Task<int> GetBooksCountByAuthorIdAsync(int id)
+        {
+            List<Book> books = new List<Book>();
+            books = await _db.Books.Where(ba => ba.Authors.Any(a => a.AuthorId == id)).ToListAsync();
+            return books.Count;
+        }
+        //Получить количество книг определенного жанара в библиотеке.
+        public async Task<int> GetBooksCountByGenreIdAsync(int id)
+        {
+            List<Book> books = new List<Book>();
+            books = await _db.Books.Where(bg => bg.Genres.Any(g => g.GenreId == id)).ToListAsync();
+            return books.Count;
+        }
+        //Получить булевый флаг о том, есть ли книга определенного автора и с определенным названием в библиотеке.
+        public async Task<bool> CheckBookByNameAuthorIdAsync(int id, string name)
+        {
+            List<Book> books = new List<Book>();
+            books = await _db.Books.Where(ba => ba.Authors.Any(a => a.AuthorId == id))
+            .Where(bg => bg.Title.Contains(name)).ToListAsync();
+            if (books.Count() != 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }        
         }
     }
 }
