@@ -58,5 +58,12 @@ namespace EF.DataAccessLibrary.Models
                 await _db.SaveChangesAsync();
             }
         }
+        //Получить количество книг на руках у пользователя.
+        public async Task<int> GetBooksCountByUserIdAsync(int id)
+        {
+            List<Book> books = new List<Book>();
+            books = await _db.Books.Where(u => u.UserId == id).ToListAsync();
+            return books.Count;
+        }
     }
 }

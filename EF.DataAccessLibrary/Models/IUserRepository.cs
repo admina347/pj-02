@@ -7,5 +7,6 @@ namespace EF.DataAccessLibrary.Models
         public Task UpdateUserAsync(User user);
         public Task CreateUserAsync(User user);
         public Task DeleteUserAsync(User user);
+        public Task<int> GetBooksCountByUserIdAsync(int id);
     }
 }

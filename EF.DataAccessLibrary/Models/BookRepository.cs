@@ -148,5 +148,40 @@ namespace EF.DataAccessLibrary.Models
                 await _db.SaveChangesAsync();
             }
         }
+        //Получение последней вышедшей книги.
+        public async Task<Book> GetLastBookAsync()
+        {
+            return await _db.Books.OrderByDescending(d => d.PublicationDate).FirstOrDefaultAsync();
+        }
+        //Получение списка всех книг, отсортированного в алфавитном порядке по названию.
+        public async Task<List<Book>> GetAllBooksOrderByTitleAscAsync()
+        {
+            List<Book> books = new List<Book>();
+            //var users = await _db.Users.ToListAsync();
+            try
+            {
+                books = await _db.Books.OrderBy(b => b.Title).ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            return books;
+        }
+        //Получение списка всех книг, отсортированного в порядке убывания года их выхода.
+        public async Task<List<Book>> GetAllBooksOrderByDateDescAsync()
+        {
+            List<Book> books = new List<Book>();
+            //var users = await _db.Users.ToListAsync();
+            try
+            {
+                books = await _db.Books.OrderByDescending(b => b.PublicationDate).ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            return books;
+        }
     }
 }

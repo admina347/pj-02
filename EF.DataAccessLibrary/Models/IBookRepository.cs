@@ -15,5 +15,8 @@ namespace EF.DataAccessLibrary.Models
         public Task<bool> CheckBookUserByIdAsync(int id);
         public Task TakeBookAsync(Book book);
         public Task ReturnBookAsync(int id);
+        public Task<Book> GetLastBookAsync();
+        public Task<List<Book>> GetAllBooksOrderByTitleAscAsync();
+        public Task<List<Book>> GetAllBooksOrderByDateDescAsync();
     }
 }

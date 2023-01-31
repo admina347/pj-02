@@ -5,7 +5,6 @@
     var Message = ViewData["Message"]?.ToString();
 }
 
-
 @if (!string.IsNullOrWhiteSpace(Message))
 {
     <div class="alert alert-success" role="alert">
@@ -104,7 +103,7 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Выберите Автора</th>
+                    <th>Выберите Жанр</th>
                     <th> </th>
                 </tr>
             </thead>
@@ -136,6 +135,24 @@
                             asp-for="SearchViewModel.SelectedAuthorId"></select></td>
                     <td><input class="form-control" type="text" asp-for="SearchViewModel.BookTitle"/></td>
                     <td><button type="submit" class="btn btn-primary" asp-page-handler="CheckByNameAuthor">Проверить</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</form>
+
+<form method="post">
+    <div class="mb-3">
+        <h5>7 - Получение последней вышедшей книги..</h5>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><button type="submit" class="btn btn-primary" asp-page-handler="GetLastBook">Пролучить</button></td>
                 </tr>
             </tbody>
         </table>

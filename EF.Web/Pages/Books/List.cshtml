@@ -24,8 +24,8 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Название</th>
-                <th>Дата публикации</th>
+                <th><a asp-action="/Books/List/" asp-route-sortOrder="@Model.NameSort">Название</a></th>
+                <th><a asp-action="/Books/List/" asp-route-sortOrder="@Model.DateSort">Дата публикации</a></th>
                 <th>На руках</th>
                 <th> </th>
                 <th> </th>
@@ -57,7 +57,7 @@
         @for (var i = 1; i <= Model.totalPages; i++)
         {
             <li class="page-item @(i == Model.currentPage ? "active" : "")">
-                <a asp-page="/Books/List" asp-route-p="@i" class="page-link">@i</a>
+                <a asp-page="/Books/List" asp-route-sortOrder="@Model.CurrentSort" asp-route-p="@i" class="page-link">@i</a>
             </li>
         }
     </ul>

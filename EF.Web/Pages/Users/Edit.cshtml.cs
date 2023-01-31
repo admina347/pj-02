@@ -67,6 +67,15 @@ namespace EF.Web.Pages.Users
                 //}
             }
         }
+        //Получить количество книг на руках у пользователя.
+        public async Task OnPostGetBookCountAsync()
+        {
+            if (EditUserViewModel != null)
+            {
+                int userBooksCount = await _userRepository.GetBooksCountByUserIdAsync(EditUserViewModel.Id);
+                ViewData["Message"] = "Количество книг: " + userBooksCount;
+            }
+        }
         public async Task<IActionResult> OnPostDeleteAsync()
         {
             if (EditUserViewModel != null)
