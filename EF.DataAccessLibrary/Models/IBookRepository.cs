@@ -12,5 +12,8 @@ namespace EF.DataAccessLibrary.Models
         public Task<int> GetBooksCountByAuthorIdAsync(int id);
         public Task<int> GetBooksCountByGenreIdAsync(int id);
         public Task<bool> CheckBookByNameAuthorIdAsync(int id, string name);
+        public Task<bool> CheckBookUserByIdAsync(int id);
+        public Task TakeBookAsync(Book book);
+        public Task ReturnBookAsync(int id);
     }
 }

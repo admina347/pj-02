@@ -49,6 +49,20 @@ namespace EF.Web.Pages.Books
                 ViewData["Message"] = "Книга успешно сохранена!";
             }
         }
+        //Получить булевый флаг о том, есть ли определенная книга на руках у пользователя.
+        public async Task OnPostCheckBookAsync(int id)
+        {
+            //проверить на руках книга или нет
+            bool bookOnUser = await _bookRepository.CheckBookUserByIdAsync(id);
+            if (bookOnUser == true)
+            {
+                ViewData["Message"] = "Книга - на руках";
+            }
+            else
+            {
+                ViewData["Message"] = "Книга в библиотеке";
+            }
+        }
         public async Task<IActionResult> OnPostDeleteAsync()
         {
             if (EditBookViewModel != null)

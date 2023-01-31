@@ -39,7 +39,7 @@ namespace EF.DataAccessLibrary.Dataaccess
                 .HasOne(ab => ab.Book)
                 .WithMany(b => b.Authors)
                 .HasForeignKey(ab => ab.BookId);
-            
+
             //Заполняем начальные данные
             modelBuilder.Seed();
         }

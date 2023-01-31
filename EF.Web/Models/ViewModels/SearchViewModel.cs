@@ -1,5 +1,3 @@
-using Microsoft.AspNetCore.Mvc.Rendering;
-
 namespace EF.Web.Models.ViewModels
 {
     public class SearchViewModel

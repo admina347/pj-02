@@ -20,13 +20,13 @@ builder.Services.AddDbContext<LibraryContext>(options =>
           b => b.MigrationsAssembly("EF.Web")));
           //b => b.MigrationsAssembly("EF.DataAccessLibrary"))); */
 //UserRepository
-builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddTransient<IUserRepository, UserRepository>();
 //BookRepository
-builder.Services.AddScoped<IBookRepository, BookRepository>();
+builder.Services.AddTransient<IBookRepository, BookRepository>();
 //AuthorRepository
-builder.Services.AddScoped<IAuthorRepository, AuthorRepository>();
+builder.Services.AddTransient<IAuthorRepository, AuthorRepository>();
 //GenreRepository
-builder.Services.AddScoped<IGenreRepository, GenreRepository>();
+builder.Services.AddTransient<IGenreRepository, GenreRepository>();
 
 var app = builder.Build();
 

@@ -26,12 +26,12 @@ namespace EF.DataAccessLibrary.Models
             }
             return books;
         }
-        //2.1 - Получить книгу
+        //2.1 - Получить книгу по Id
         public async Task<Book> GetBookByIdAsync(int id)
         {
             return await _db.Books.FindAsync(id);
         }
-        //2.1 - Получить книгу
+        //2.1 - Получить книгу детали
         public async Task<Book> GetBookDetailsByIdAsync(int id)
         {
             return await _db.Books.Include(ab => ab.Authors).ThenInclude(a => a.Author)
@@ -111,6 +111,42 @@ namespace EF.DataAccessLibrary.Models
             {
                 return false;
             }        
+        }
+        //Получить булевый флаг о том, есть ли определенная книга на руках у пользователя.
+        public async Task<bool> CheckBookUserByIdAsync(int id)
+        {
+            Book book = new Book();
+            book = await _db.Books.FindAsync(id);
+            if (book.UserId == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        //Взять книгу на руки
+        public async Task TakeBookAsync(Book book)
+        {
+            var existingBook = await _db.Books.FindAsync(book.Id);
+            if (existingBook != null)
+            {
+                //Convert ViewModel to DomainModel
+                existingBook.UserId = book.UserId;
+                await _db.SaveChangesAsync();
+            }
+        }
+        //Вернуть книгу в библиотеку
+        public async Task ReturnBookAsync(int id)
+        {
+            var existingBook = await _db.Books.FindAsync(id);
+            if (existingBook != null)
+            {
+                //Convert ViewModel to DomainModel
+                existingBook.UserId = null;
+                await _db.SaveChangesAsync();
+            }
         }
     }
 }

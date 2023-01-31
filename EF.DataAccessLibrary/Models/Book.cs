@@ -15,8 +15,8 @@ namespace EF.DataAccessLibrary.Models
         public DateTime PublicationDate { get; set; }
 
         public int? UserId { get; set; }
-
         public User User { get; set; }
+
         //Авторов может быть несколько
         public List<AuthorBook> Authors { get; set; }   // = new List<Author>();
 

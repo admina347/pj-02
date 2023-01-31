@@ -2,9 +2,17 @@
 @model EF.Web.Pages.Books.List
 @{
     ViewData["Title"] = "Книги";
+    var Message = ViewData["Message"]?.ToString();
 }
 
 <h1 class="mb-3">@ViewData["Title"]</h1>
+
+@if (!string.IsNullOrWhiteSpace(Message))
+{
+    <div class="alert alert-success" role="alert">
+        @Message
+    </div>
+}
 
 <div class="mb-3">
     <a href="/Books/Add" class="btn btn btn-success" role="button">Создать</a>
@@ -18,6 +26,7 @@
                 <th>Id</th>
                 <th>Название</th>
                 <th>Дата публикации</th>
+                <th>На руках</th>
                 <th> </th>
                 <th> </th>
             </tr>
@@ -29,6 +38,14 @@
                     <td>@book.Id</td>
                     <td>@book.Title</td>
                     <td>@book.PublicationDate.Year</td>
+                    @if(book.UserId == null)
+                    {
+                        <td>Нет</td>
+                    }
+                    else
+                    {
+                        <td>Да</td>
+                    }                
                     <td><a href="/Books/Edit/@book.Id" class="btn btn-dark">Изменить</a></td>
                     <td><a href="/Books/Details/@book.Id" class="btn btn-dark">Подробно</a></td>
                 </tr>

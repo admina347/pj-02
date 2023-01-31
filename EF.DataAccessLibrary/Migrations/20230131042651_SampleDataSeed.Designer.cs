@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EF.DataAccessLibrary.Migrations
 {
     [DbContext(typeof(LibraryContext))]
-    [Migration("20230128061505_SampleDataSeed")]
+    [Migration("20230131042651_SampleDataSeed")]
     partial class SampleDataSeed
     {
         /// <inheritdoc />
