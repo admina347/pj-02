@@ -1,0 +1,40 @@
+@page "{id:int}"
+@model EF.Web.Pages.Books.Edit
+@{
+    ViewData["Title"] = "Редактирование книги";
+    var Message = ViewData["Message"]?.ToString();
+}
+
+<form method="post">
+<h1 class="mb-3">@ViewData["Title"]</h1>
+
+@if (!string.IsNullOrWhiteSpace(Message))
+{
+    <div class="alert alert-success" role="alert">
+        @Message
+    </div>
+}
+<div class="mb-3">
+    <label class="form-label">Id</label>
+    <input class="form-control" type="text" asp-for="EditBookViewModel.Id" readonly/>
+</div>
+<div class="mb-3">
+    <label class="form-label">Название</label>
+    <input class="form-control" type="text" asp-for="EditBookViewModel.Title"/>
+</div>
+<div class="mb-3">
+    <label class="form-label">Дата публикации</label>
+    <input class="form-control" type="date" asp-for="EditBookViewModel.PublicationDate"/>
+</div>
+<div class="mb-3 d-flex justify-content-between">
+    <button type="submit" class="btn btn-primary" asp-page-handler="Update">
+        Обновить
+    </button>
+    <button type="submit" class="btn btn-primary" asp-page-handler="CheckBook">
+        Где книга?
+    </button>
+    <button type="submit" class="btn btn-danger" asp-page-handler="Delete">
+        Удалить
+    </button>
+</div>
+</form>

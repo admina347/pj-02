@@ -1,0 +1,160 @@
+@page
+@model EF.Web.Pages.Books.Search
+@{
+    ViewData["Title"] = "Поиск";
+    var Message = ViewData["Message"]?.ToString();
+}
+
+@if (!string.IsNullOrWhiteSpace(Message))
+{
+    <div class="alert alert-success" role="alert">
+        @Message
+    </div>
+}
+
+@if (Model.Books != null && Model.Books.Any())
+{
+    <table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Название</th>
+            <th>Дата публикации</th>
+            <th> </th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model.Books)
+            {
+                <tr>
+                    <td>@book.Id</td>
+                    <td>@book.Title</td>
+                    <td>@book.PublicationDate.Year</td>
+                    <td><a href="/Books/Edit/@book.Id" class="btn btn-dark">Изменить</a></td>
+                    <td><a href="/Books/Details/@book.Id" class="btn btn-dark">Подробно</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="container">
+    <ul class="pagination justify-content-end">
+        @for (var i = 1; i <= Model.totalPages; i++)
+            {
+                <li class="page-item @(i == Model.currentPage ? "active" : "")">
+                    <a asp-page="/Books/Search" asp-route-p="@i" class="page-link">@i</a>
+                </li>
+            }
+        </ul>
+    </div>
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post">
+    <div class="mb-3">
+        <h5>1 - Получать список книг определенного жанра и вышедших между определенными годами.</h5>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Выберите Жанр</th>
+                    <th>Начальная дата</th>
+                    <th>Конечная дата</th>
+                    <th> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><select class="form-select" asp-items="Model.Genres"
+                            asp-for="SearchViewModel.SelectedGenreId"></select></td>
+                    <td><input class="form-control" type="date" asp-for="SearchViewModel.SatrtDate" /></td>
+                    <td><input class="form-control" type="date" asp-for="SearchViewModel.EndDate" /></td>
+                    <td><button type="submit" class="btn btn-primary" asp-page-handler="SearchBookByGenreYears">Искать</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</form>
+
+<form method="post">
+    <div class="mb-3">
+        <h5>2 - Получать количество книг определенного автора в библиотеке.</h5>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Выберите Автора</th>
+                    <th> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><select class="form-select" asp-items="Model.Authors"
+                            asp-for="SearchViewModel.SelectedAuthorId"></select></td>
+                    <td><button type="submit" class="btn btn-primary" asp-page-handler="GetBookCountByAuthor">Искать</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</form>
+
+<form method="post">
+    <div class="mb-3">
+        <h5>3 - Получить количество книг определенного жанра в библиотеке.</h5>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Выберите Жанр</th>
+                    <th> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><select class="form-select" asp-items="Model.Genres"
+                            asp-for="SearchViewModel.SelectedGenreId"></select></td>
+                    <td><button type="submit" class="btn btn-primary" asp-page-handler="GetBookCountByGenre">Искать</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</form>
+
+<form method="post">
+    <div class="mb-3">
+        <h5>4 - Получить булевый флаг о том, есть ли книга определенного автора и с определенным названием в библиотеке.</h5>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Выберите Автора</th>
+                    <th>Название</th>
+                    <th> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><select class="form-select" asp-items="Model.Authors"
+                            asp-for="SearchViewModel.SelectedAuthorId"></select></td>
+                    <td><input class="form-control" type="text" asp-for="SearchViewModel.BookTitle"/></td>
+                    <td><button type="submit" class="btn btn-primary" asp-page-handler="CheckByNameAuthor">Проверить</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</form>
+
+<form method="post">
+    <div class="mb-3">
+        <h5>7 - Получение последней вышедшей книги..</h5>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><button type="submit" class="btn btn-primary" asp-page-handler="GetLastBook">Пролучить</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</form>

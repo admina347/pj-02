@@ -1,0 +1,65 @@
+@page
+@model EF.Web.Pages.Books.List
+@{
+    ViewData["Title"] = "Книги";
+    var Message = ViewData["Message"]?.ToString();
+}
+
+<h1 class="mb-3">@ViewData["Title"]</h1>
+
+@if (!string.IsNullOrWhiteSpace(Message))
+{
+    <div class="alert alert-success" role="alert">
+        @Message
+    </div>
+}
+
+<div class="mb-3">
+    <a href="/Books/Add" class="btn btn btn-success" role="button">Создать</a>
+</div>
+
+@if (Model.Books != null && Model.Books.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th><a asp-action="/Books/List/" asp-route-sortOrder="@Model.NameSort">Название</a></th>
+                <th><a asp-action="/Books/List/" asp-route-sortOrder="@Model.DateSort">Дата публикации</a></th>
+                <th>На руках</th>
+                <th> </th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Model.Books)
+            {
+                <tr>
+                    <td>@book.Id</td>
+                    <td>@book.Title</td>
+                    <td>@book.PublicationDate.Year</td>
+                    @if(book.UserId == null)
+                    {
+                        <td>Нет</td>
+                    }
+                    else
+                    {
+                        <td>Да</td>
+                    }                
+                    <td><a href="/Books/Edit/@book.Id" class="btn btn-dark">Изменить</a></td>
+                    <td><a href="/Books/Details/@book.Id" class="btn btn-dark">Подробно</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="container">
+        <ul class="pagination justify-content-end">
+        @for (var i = 1; i <= Model.totalPages; i++)
+        {
+            <li class="page-item @(i == Model.currentPage ? "active" : "")">
+                <a asp-page="/Books/List" asp-route-sortOrder="@Model.CurrentSort" asp-route-p="@i" class="page-link">@i</a>
+            </li>
+        }
+    </ul>
+</div>
+}

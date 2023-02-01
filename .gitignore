@@ -1,4 +1,11 @@
+/.vscode/
 /EF.DataAccessLibrary/bin/
 /EF.DataAccessLibrary/obj/
+/EF.Web/bin/
+/EF.Web/obj/
 *.json
 *.csproj
+*.??-template
+#!EF.Web/generated_users.json
+#!EF.Web/generated_books.json
+*.ods

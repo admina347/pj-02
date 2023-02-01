@@ -1,10 +1,10 @@
 using System.ComponentModel.DataAnnotations;
+using EF.DataAccessLibrary.Models;
 
-namespace EF.DataAccessLibrary.Models
+namespace EF.Web.Models.ViewModels
 {
-    public class User
+    public class EditUserViewModel
     {
-        [Key]
         public int Id { get; set; }
 
         [Required]
@@ -16,6 +16,6 @@ namespace EF.DataAccessLibrary.Models
         [EmailAddress]
         public string Email { get; set; }
 
-        public List<Book> Books { get; set; }
+        public List<Book> Books { get; set; } = new List<Book>();
     }
 }

@@ -1,0 +1,30 @@
+@page
+@model EF.Web.Pages.Books.Add
+@{
+    ViewData["Title"] = "Добавить Книгу";
+    var message = ViewData["Message"]?.ToString();
+}
+
+<form method="post">
+    <h1 class="mb-3">@ViewData["Title"]</h1>
+
+    @if (!string.IsNullOrWhiteSpace(message))
+    {
+        <div class="alert alert-success" role="alert">
+            @message
+        </div>
+    }
+
+    <div class="mb-3">
+        <label class="form-label">Название</label>
+        <input class="form-control" type="text" asp-for="AddBookRequest.Title" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Email address</label>
+        <input class="form-control" type="date" asp-for="AddBookRequest.PublicationDate" />
+    </div>
+
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+    </div>
+</form>

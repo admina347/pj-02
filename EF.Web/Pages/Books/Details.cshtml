@@ -1,0 +1,83 @@
+@page "{id:int}"
+@model EF.Web.Pages.Books.Details
+@{
+    ViewData["Title"] = "Книга";
+    var Message = ViewData["Message"]?.ToString();
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@if (!string.IsNullOrWhiteSpace(Message))
+{
+    <div class="alert alert-success" role="alert">
+    @Message
+</div>
+}
+
+@if (Model.EditBookViewModel != null)
+{
+    <h2>@Model.EditBookViewModel.Title</h2>
+    <div class="mb-3">
+    <P>Дата издания: @Model.EditBookViewModel.PublicationDate.Year</P>
+</div>
+    <h2>Авторы</h2>
+    @foreach (var author in Model.EditBookViewModel.Authors)
+    {
+        <div>
+            @author.Author.FirstName @author.Author.LastName
+        </div>
+    }
+    <h2>Жанры</h2>
+    <div>
+    <table class="table">
+        <tbody>
+            <tr>
+                @foreach (var genre in Model.EditBookViewModel.Genres)
+                    {
+
+                        <td>@genre.Genre.Name</td>
+                    }
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    @if (Model.EditBookViewModel.UserId == null)
+    {
+        <form method="post">
+            <div class="mb-3">
+                <h5>Взять книгу</h5>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Выберите Пользователя</th>
+                            <th> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><select class="form-select" asp-items="Model.Users"
+                                asp-for="DetailsBookViewModel.SelectedUserId"></select></td>
+                            <td><button type="submit" class="btn btn-primary" asp-page-handler="TakeBook">Взять</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+    }
+    else
+    {
+        <form method="post">
+            <div class="mb-3">
+                <h3>Книаг на руках:</h3>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary" asp-page-handler="ReturnBook">
+                        Вернуть
+                    </button>
+                </div>
+            </div>
+        </form>
+    }
+}
+
+

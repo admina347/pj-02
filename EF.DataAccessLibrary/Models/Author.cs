@@ -1,8 +1,9 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EF.DataAccessLibrary.Models
 {
-    public class User
+    public class Author
     {
         [Key]
         public int Id { get; set; }
@@ -13,9 +14,9 @@ namespace EF.DataAccessLibrary.Models
 
         [Required]
         [MaxLength(50)]
-        [EmailAddress]
-        public string Email { get; set; }
+        public string LastName { get; set; }
 
-        public List<Book> Books { get; set; }
+        // Навигационное свойство
+        public List<AuthorBook> Books { get; set; }    // = new List<Book>();
     }
 }
