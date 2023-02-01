@@ -36,44 +36,27 @@ namespace EF.Web.Pages.Books
             _authorRepository = authorRepository;
         }
  
-        List<Genre> GenresData;
-        List<Author> AuthorsData;
-
         public async Task OnGetAsync()
         {
-            //SearchViewModel.genres = new List<SelectListItem>();
-            //var genresData = await _genreRepository.GetAllGenresAsync();
-            GenresData = await _genreRepository.GetAllGenresAsync();
-            Genres = new SelectList(GenresData, nameof(Genre.Id), nameof(Genre.Name));
+            //SelectList
+            var genresData = await _genreRepository.GetAllGenresAsync();
+            genresData = await _genreRepository.GetAllGenresAsync();
+            Genres = new SelectList(genresData, nameof(Genre.Id), nameof(Genre.Name));
 
-
-            //var authorsData = await _authorRepository.GetAllAuthorsAsync();
-            AuthorsData = await _authorRepository.GetAllAuthorsAsync();
-            Authors = new SelectList(AuthorsData, nameof(Author.Id), nameof(Author.FirstName), null, (nameof(Author.LastName)));
-            //var model = new SearchViewModel();
-            //model.GenresSelectList = new List<SelectListItem>();
-
-            //var genres = new List<Genre>();
-
-            //foreach (var genre in genresData)
-            //{
-            //    model.GenresSelectList.Add(new SelectListItem { Text = genre.Name, Value = genre.Id.ToString()});
-            //}
+            var authorsData = await _authorRepository.GetAllAuthorsAsync();
+            authorsData = await _authorRepository.GetAllAuthorsAsync();
+            Authors = new SelectList(authorsData, nameof(Author.Id), nameof(Author.FirstName), null, (nameof(Author.LastName)));
         }
         //1 -Получать список книг определенного жанра и вышедших между определенными годами.
         public async Task OnPostSearchBookByGenreYearsAsync(int p = 1, int s = 10)
         {
-            //Заполним SelectList
-            OnGetAsync();
-
             //Получить жанры
-            /* var genresData = await _genreRepository.GetAllGenresAsync();
+            var genresData = await _genreRepository.GetAllGenresAsync();
             Genres = new SelectList(genresData, nameof(Genre.Id), nameof(Genre.Name));
             //Получим Аторов
             var authorsData = await _authorRepository.GetAllAuthorsAsync();
-            Authors = new SelectList(authorsData, nameof(Author.Id), nameof(Author.FirstName), null, nameof(Author.LastName)); */
+            Authors = new SelectList(authorsData, nameof(Author.Id), nameof(Author.FirstName), null, nameof(Author.LastName));
 
-            //var selectedGenre = model.SelectedGenre;
             if (SearchViewModel != null)
             {
                 //Проверим входные параметры
@@ -87,71 +70,65 @@ namespace EF.Web.Pages.Books
                 SearchViewModel.EndDate = SearchViewModel.SatrtDate;
                 //поиск книг
                 var data = await _bookRepository.GetBooksByGenreSatrtEndDateAsync(SearchViewModel.SelectedGenreId, 
-                SearchViewModel.SatrtDate, SearchViewModel.EndDate);   //, SearchViewModel.SatrtDate, SearchViewModel.EndDate
+                SearchViewModel.SatrtDate, SearchViewModel.EndDate);
                 pageSize = s;
                 currentPage = p;
                 totalPages = (int)Math.Ceiling((decimal)data.Count() / (decimal)pageSize);      
                 Books = data.Skip((p - 1) * s).Take(s).ToList();
-                var genreName = GenresData[SearchViewModel.SelectedGenreId - 1].Name;
+                var genreName = genresData[SearchViewModel.SelectedGenreId - 1].Name;
                 ViewData["Message"] = "Жанр: " + genreName + ", Года: " + SearchViewModel.SatrtDate.Year + " - " + SearchViewModel.EndDate.Year;
             };
         }
         //2 - Получить количество книг определенного автора в библиотеке.
         public async Task OnPostGetBookCountByAuthorAsync()
         {
-            //Заполним SelectList
-            OnGetAsync();
-            //SearchViewModel.genres = new List<SelectListItem>();
-            /* var genresData = await _genreRepository.GetAllGenresAsync();
+            //Получить жанры
+            var genresData = await _genreRepository.GetAllGenresAsync();
             Genres = new SelectList(genresData, nameof(Genre.Id), nameof(Genre.Name));
-
+            //Получим Аторов
             var authorsData = await _authorRepository.GetAllAuthorsAsync();
-            Authors = new SelectList(authorsData, nameof(Author.Id), nameof(Author.FirstName), null, nameof(Author.LastName)); */
+            Authors = new SelectList(authorsData, nameof(Author.Id), nameof(Author.FirstName), null, nameof(Author.LastName));
     
             if (SearchViewModel != null)
             {
                 int authorBooksCount = await _bookRepository.GetBooksCountByAuthorIdAsync(SearchViewModel.SelectedAuthorId);
-                var authorName = AuthorsData[SearchViewModel.SelectedAuthorId - 1].FirstName + " " + 
-                AuthorsData[SearchViewModel.SelectedAuthorId - 1].LastName;
+                var authorName = authorsData[SearchViewModel.SelectedAuthorId - 1].FirstName + " " + 
+                authorsData[SearchViewModel.SelectedAuthorId - 1].LastName;
                 ViewData["Message"] = "Автор: " + authorName + ", Количество книг: " + authorBooksCount;
             }
         }
         //3 - Получить количество книг определенного жанра в библиотеке.
         public async Task OnPostGetBookCountByGenreAsync()
         {
-            //Заполним SelectList
-            OnGetAsync();
-            //SearchViewModel.genres = new List<SelectListItem>();
-            /* var genresData = await _genreRepository.GetAllGenresAsync();
+            //Получить жанры
+            var genresData = await _genreRepository.GetAllGenresAsync();
             Genres = new SelectList(genresData, nameof(Genre.Id), nameof(Genre.Name));
-
+            //Получим Аторов
             var authorsData = await _authorRepository.GetAllAuthorsAsync();
-            Authors = new SelectList(authorsData, nameof(Author.Id), nameof(Author.FirstName), null, nameof(Author.LastName)); */
+            Authors = new SelectList(authorsData, nameof(Author.Id), nameof(Author.FirstName), null, nameof(Author.LastName));
     
             if (SearchViewModel != null)
             {
                 int genreBooksCount = await _bookRepository.GetBooksCountByGenreIdAsync(SearchViewModel.SelectedGenreId);
-                var genreName = GenresData[SearchViewModel.SelectedGenreId - 1].Name;
+                var genreName = genresData[SearchViewModel.SelectedGenreId - 1].Name;
                 ViewData["Message"] = "Жанр: " + genreName + ", Количество книг: " + genreBooksCount;
             }
         }
         //4 - Получить булевый флаг о том, есть ли книга определенного автора и с определенным названием в библиотеке.
         public async Task OnPostCheckByNameAuthorAsync()
         {
-            //Заполним SelectList
-            OnGetAsync();
             //Получить жанры
-            /* var genresData = await _genreRepository.GetAllGenresAsync();
+            var genresData = await _genreRepository.GetAllGenresAsync();
             Genres = new SelectList(genresData, nameof(Genre.Id), nameof(Genre.Name));
             //Получим Аторов
             var authorsData = await _authorRepository.GetAllAuthorsAsync();
-            Authors = new SelectList(authorsData, nameof(Author.Id), nameof(Author.FirstName), null, nameof(Author.LastName)); */
+            Authors = new SelectList(authorsData, nameof(Author.Id), nameof(Author.FirstName), null, nameof(Author.LastName));
 
             if (SearchViewModel != null)
             {
                 bool booksExist = await _bookRepository.CheckBookByNameAuthorIdAsync(SearchViewModel.SelectedAuthorId, SearchViewModel.BookTitle);
-                var authorName = AuthorsData[SearchViewModel.SelectedAuthorId - 1].FirstName + " " + 
-                AuthorsData[SearchViewModel.SelectedAuthorId - 1].LastName;
+                var authorName = authorsData[SearchViewModel.SelectedAuthorId - 1].FirstName + " " + 
+                authorsData[SearchViewModel.SelectedAuthorId - 1].LastName;
                 if (booksExist == true)
                 {
                     ViewData["Message"] = "Книги Автора: " + authorName + ", c Названием: " + SearchViewModel.BookTitle +" Есть!";
@@ -165,8 +142,13 @@ namespace EF.Web.Pages.Books
         //Получение последней вышедшей книги.
         public async Task OnPostGetLastBookAsync()
         {
-            //Заполним SelectList
-            OnGetAsync();
+            //Получить жанры
+            var genresData = await _genreRepository.GetAllGenresAsync();
+            Genres = new SelectList(genresData, nameof(Genre.Id), nameof(Genre.Name));
+            //Получим Аторов
+            var authorsData = await _authorRepository.GetAllAuthorsAsync();
+            Authors = new SelectList(authorsData, nameof(Author.Id), nameof(Author.FirstName), null, nameof(Author.LastName));
+            
             //Полседняя 
             var lastBook = await _bookRepository.GetLastBookAsync();
             ViewData["Message"] = "Последняя вышедшая книга: " + lastBook.Title + ", Год: " + lastBook.PublicationDate.Year;

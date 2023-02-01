@@ -16,6 +16,6 @@ namespace EF.DataAccessLibrary.Models
         [EmailAddress]
         public string Email { get; set; }
 
-        public List<Book> Books { get; set; } = new List<Book>();
+        public List<Book> Books { get; set; }
     }
 }

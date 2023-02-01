@@ -16,6 +16,6 @@ namespace EF.Web.Pages.Books
         public string LastName { get; set; }
 
         // Навигационное свойство
-        public List<AuthorBook> Books { get; set; }    // = new List<Book>();
+        public List<AuthorBook> Books { get; set; }
     }
 }

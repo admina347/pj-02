@@ -7,6 +7,19 @@ namespace EF.DataAccessLibrary.Migrations
     {
         public static void Seed(this ModelBuilder modelBuilder)
         {
+            //Пользователи
+            modelBuilder.Entity<User>().HasData(
+                new User { Id = 1, FirstName = "Артём", Email = "artem86@bk.ru" },
+                new User { Id = 2, FirstName = "Артур", Email = "artur79@bk.ru" },
+                new User { Id = 3, FirstName = "Руслан", Email = "Rus96@mail.ru" },
+                new User { Id = 4, FirstName = "Олег", Email = "Oleg83@mail.ru" },
+                new User { Id = 5, FirstName = "Алексей", Email = "alex.a@bk.ru" },
+                new User { Id = 6, FirstName = "Павел", Email = "Pasha-87@bk.ru" },
+                new User { Id = 7, FirstName = "Тимур", Email = "tima-s00@bk.ru" },
+                new User { Id = 8, FirstName = "Женя", Email = "zheka77@list.ru" },
+                new User { Id = 9, FirstName = "Марат", Email = "marik-94@bk.ru" },
+                new User { Id = 10, FirstName = "Рустем", Email = "rust02@bk.ru" }
+            );
             //Авторы
             modelBuilder.Entity<Author>().HasData(
                 new Author { Id = 1, FirstName = "Александр", LastName = "Беляев" },
@@ -53,7 +66,8 @@ namespace EF.DataAccessLibrary.Migrations
                 new Author { Id = 42, FirstName = "Шарлотта", LastName = "Бронте" },
                 new Author { Id = 43, FirstName = "Эрих Мария", LastName = "Ремарк" },
                 new Author { Id = 44, FirstName = "Эрнест", LastName = "Хемингуэй" },
-                new Author { Id = 45, FirstName = "Юлиан", LastName = "Семенов" });
+                new Author { Id = 45, FirstName = "Юлиан", LastName = "Семенов" }
+            );
             //Жанры
             modelBuilder.Entity<Genre>().HasData(
                 new Genre { Id = 1, Name = "Автобиография" },
@@ -97,31 +111,31 @@ namespace EF.DataAccessLibrary.Migrations
             );
             //Книги
             modelBuilder.Entity<Book>().HasData(
-                new Book { Id = 1, Title = "Мастер и Маргарита", PublicationDate = Convert.ToDateTime("1929-01-01") },
-                new Book { Id = 2, Title = "Собачье сердце", PublicationDate = Convert.ToDateTime("1925-01-01") },
-                new Book { Id = 3, Title = "Двенадцать стульев", PublicationDate = Convert.ToDateTime("1928-01-01") },
-                new Book { Id = 4, Title = "Мёртвые души", PublicationDate = Convert.ToDateTime("1842-01-01") },
-                new Book { Id = 5, Title = "Граф Монте-Кристо", PublicationDate = Convert.ToDateTime("1844-01-01") },
-                new Book { Id = 6, Title = "Золотой теленок", PublicationDate = Convert.ToDateTime("1931-01-01") },
-                new Book { Id = 7, Title = "Три товарища", PublicationDate = Convert.ToDateTime("1936-01-01") },
+                new Book { Id = 1, Title = "Мастер и Маргарита", PublicationDate = Convert.ToDateTime("1929-01-01"), UserId = 1 },
+                new Book { Id = 2, Title = "Собачье сердце", PublicationDate = Convert.ToDateTime("1925-01-01"), UserId = 1  },
+                new Book { Id = 3, Title = "Двенадцать стульев", PublicationDate = Convert.ToDateTime("1928-01-01"), UserId = 2 },
+                new Book { Id = 4, Title = "Мёртвые души", PublicationDate = Convert.ToDateTime("1842-01-01"), UserId = 2 },
+                new Book { Id = 5, Title = "Граф Монте-Кристо", PublicationDate = Convert.ToDateTime("1844-01-01"), UserId = 3 },
+                new Book { Id = 6, Title = "Золотой теленок", PublicationDate = Convert.ToDateTime("1931-01-01"), UserId = 4 },
+                new Book { Id = 7, Title = "Три товарища", PublicationDate = Convert.ToDateTime("1936-01-01"), UserId = 9 },
                 new Book { Id = 8, Title = "Отверженные", PublicationDate = Convert.ToDateTime("1862-01-01") },
                 new Book { Id = 9, Title = "Преступление и наказание", PublicationDate = Convert.ToDateTime("1866-01-01") },
                 new Book { Id = 10, Title = "Война и мир", PublicationDate = Convert.ToDateTime("1865-01-01") },
-                new Book { Id = 11, Title = "Евгений Онегин", PublicationDate = Convert.ToDateTime("1825-01-01") },
+                new Book { Id = 11, Title = "Евгений Онегин", PublicationDate = Convert.ToDateTime("1825-01-01"), UserId = 1  },
                 new Book { Id = 12, Title = "Ревизор", PublicationDate = Convert.ToDateTime("1836-01-01") },
-                new Book { Id = 13, Title = "Повести Белкина", PublicationDate = Convert.ToDateTime("1831-01-01") },
-                new Book { Id = 14, Title = "Отцы и дети", PublicationDate = Convert.ToDateTime("1860-01-01") },
+                new Book { Id = 13, Title = "Повести Белкина", PublicationDate = Convert.ToDateTime("1831-01-01"), UserId = 2 },
+                new Book { Id = 14, Title = "Отцы и дети", PublicationDate = Convert.ToDateTime("1860-01-01"), UserId = 8 },
                 new Book { Id = 15, Title = "Село Степанчиково и его обитатели", PublicationDate = Convert.ToDateTime("1859-01-01") },
-                new Book { Id = 16, Title = "Палата № 6", PublicationDate = Convert.ToDateTime("1892-01-01") },
+                new Book { Id = 16, Title = "Палата № 6", PublicationDate = Convert.ToDateTime("1892-01-01"), UserId = 7 },
                 new Book { Id = 17, Title = "Три мушкетера", PublicationDate = Convert.ToDateTime("1844-01-01") },
                 new Book { Id = 18, Title = "Братья Карамазовы", PublicationDate = Convert.ToDateTime("1879-01-01") },
-                new Book { Id = 19, Title = "Идиот", PublicationDate = Convert.ToDateTime("1868-01-01") },
+                new Book { Id = 19, Title = "Идиот", PublicationDate = Convert.ToDateTime("1868-01-01"), UserId = 2 },
                 new Book { Id = 20, Title = "Собака Баскервилей", PublicationDate = Convert.ToDateTime("1901-01-01") },
-                new Book { Id = 21, Title = "Рудин", PublicationDate = Convert.ToDateTime("1855-01-01") },
+                new Book { Id = 21, Title = "Рудин", PublicationDate = Convert.ToDateTime("1855-01-01"), UserId = 1 },
                 new Book { Id = 22, Title = "Приключения Шерлока Холмса", PublicationDate = Convert.ToDateTime("1887-01-01") },
                 new Book { Id = 23, Title = "Дубровский", PublicationDate = Convert.ToDateTime("1833-01-01") },
                 new Book { Id = 24, Title = "Драма на охоте", PublicationDate = Convert.ToDateTime("1884-01-01") },
-                new Book { Id = 25, Title = "Капитанская дочка", PublicationDate = Convert.ToDateTime("1836-01-01") },
+                new Book { Id = 25, Title = "Капитанская дочка", PublicationDate = Convert.ToDateTime("1836-01-01"), UserId = 1  },
                 new Book { Id = 26, Title = "Горе от ума", PublicationDate = Convert.ToDateTime("1828-01-01") },
                 new Book { Id = 27, Title = "Униженные и оскорблённые", PublicationDate = Convert.ToDateTime("1861-01-01") },
                 new Book { Id = 28, Title = "Дворянское гнездо", PublicationDate = Convert.ToDateTime("1859-01-01") },
@@ -680,19 +694,7 @@ namespace EF.DataAccessLibrary.Migrations
                 new AuthorBook { AuthorId = 14, BookId = 81 },
                 new AuthorBook { AuthorId = 34, BookId = 52 },
                 new AuthorBook { AuthorId = 25, BookId = 3 },
-                new AuthorBook { AuthorId = 25, BookId = 6 });
-            //Пользователи
-            modelBuilder.Entity<User>().HasData(
-                new User { Id = 1, FirstName = "Артём", Email = "artem86@bk.ru" },
-                new User { Id = 2, FirstName = "Артур", Email = "artur79@bk.ru" },
-                new User { Id = 3, FirstName = "Руслан", Email = "Rus96@mail.ru" },
-                new User { Id = 4, FirstName = "Олег", Email = "Oleg83@mail.ru" },
-                new User { Id = 5, FirstName = "Алексей", Email = "alex.a@bk.ru" },
-                new User { Id = 6, FirstName = "Павел", Email = "Pasha-87@bk.ru" },
-                new User { Id = 7, FirstName = "Тимур", Email = "tima-s00@bk.ru" },
-                new User { Id = 8, FirstName = "Женя", Email = "zheka77@list.ru" },
-                new User { Id = 9, FirstName = "Марат", Email = "marik-94@bk.ru" },
-                new User { Id = 10, FirstName = "Рустем", Email = "rust02@bk.ru" }
+                new AuthorBook { AuthorId = 25, BookId = 6 }
             );
         }
     }

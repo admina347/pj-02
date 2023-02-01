@@ -34,27 +34,10 @@ namespace EF.Web.Pages.Users
             }
         }
 
-        /* public User GetById(int id)
-        {
-            int uid = id;
-            User user = new User();
-            Console.WriteLine("Получили: " + uid);
-            return _db.Users.FirstOrDefault(u => u.Id == id);
-        } */
-
         public async Task OnPostUpdateAsync()
         {
             if (EditUserViewModel != null)
             {
-                //var existingUser = _db.Users.Find(EditUserViewModel.Id);
-                //if (existingUser != null)
-                //{
-                
-                //existingBook.Id = EditBookViewModel.Id;
-                //existingBook.Title = EditBookViewModel.Title;
-                //existingBook.PublicationDate = EditBookViewModel.PublicationDate;
-                //_db.SaveChanges();
-
                 //Convert ViewModel to DomainModel
                 User editUser = new User()
                 {
@@ -64,7 +47,6 @@ namespace EF.Web.Pages.Users
                 //Update User
                 await _userRepository.UpdateUserAsync(editUser);
                 ViewData["Message"] = "Пользователь успешно обновлен!";
-                //}
             }
         }
         //Получить количество книг на руках у пользователя.

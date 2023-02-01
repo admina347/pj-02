@@ -9,7 +9,7 @@ namespace EF.DataAccessLibrary.Models
 
         public UserRepository(LibraryContext db)
         {
-           _db = db;
+            _db = db;
         }
         //2.2 - Получить всех пользователей
         public async Task<List<User>> GetAllUsersAsync()
@@ -54,6 +54,13 @@ namespace EF.DataAccessLibrary.Models
             var existingUser = await _db.Users.FindAsync(user.Id);
             if (existingUser != null)
             {
+                //вернуть книги - разрыв связи
+                List<Book> books = new List<Book>();
+                books = await _db.Books.Where(u => u.UserId == user.Id).ToListAsync();
+                foreach (var book in books)
+                {
+                    book.UserId = null;
+                }
                 _db.Users.Remove(existingUser);
                 await _db.SaveChangesAsync();
             }

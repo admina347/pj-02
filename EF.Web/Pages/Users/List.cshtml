@@ -4,24 +4,12 @@
 @{
     ViewData["Title"] = "Пользователи";
     var Message = ViewData["Message"]?.ToString();
-
-    @* Pager pager = new Pager();
-int pageNo = 0;
-if (ViewBag.Pager != null)
-{
-pager = ViewBag.Pager;
-pageNo = pager.CurrentPage;
-} *@
 }
 
 <h1>@ViewData["Title"]</h1>
 
 <div class="mb-3">
-    <!--<button type="button" class="btn btn-success">
-        Создать
-    </button>-->
     <a href="/Users/Add" class="btn btn btn-success" role="button">Создать</a>
-    <!--<a href="/Users/Add" class="btn btn-green">Создать</a>-->
 </div>
 
 @if (!string.IsNullOrWhiteSpace(Message))

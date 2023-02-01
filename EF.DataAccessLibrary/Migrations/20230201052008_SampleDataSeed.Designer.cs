@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EF.DataAccessLibrary.Migrations
 {
     [DbContext(typeof(LibraryContext))]
-    [Migration("20230131042651_SampleDataSeed")]
+    [Migration("20230201052008_SampleDataSeed")]
     partial class SampleDataSeed
     {
         /// <inheritdoc />
@@ -892,43 +892,50 @@ namespace EF.DataAccessLibrary.Migrations
                         {
                             Id = 1,
                             PublicationDate = new DateTime(1929, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Мастер и Маргарита"
+                            Title = "Мастер и Маргарита",
+                            UserId = 1
                         },
                         new
                         {
                             Id = 2,
                             PublicationDate = new DateTime(1925, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Собачье сердце"
+                            Title = "Собачье сердце",
+                            UserId = 1
                         },
                         new
                         {
                             Id = 3,
                             PublicationDate = new DateTime(1928, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Двенадцать стульев"
+                            Title = "Двенадцать стульев",
+                            UserId = 2
                         },
                         new
                         {
                             Id = 4,
                             PublicationDate = new DateTime(1842, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Мёртвые души"
+                            Title = "Мёртвые души",
+                            UserId = 2
                         },
                         new
                         {
                             Id = 5,
                             PublicationDate = new DateTime(1844, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Граф Монте-Кристо"
+                            Title = "Граф Монте-Кристо",
+                            UserId = 3
                         },
                         new
                         {
                             Id = 6,
                             PublicationDate = new DateTime(1931, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Золотой теленок"
+                            Title = "Золотой теленок",
+                            UserId = 4
                         },
                         new
                         {
                             Id = 7,
                             PublicationDate = new DateTime(1936, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Три товарища"
+                            Title = "Три товарища",
+                            UserId = 9
                         },
                         new
                         {
@@ -952,7 +959,8 @@ namespace EF.DataAccessLibrary.Migrations
                         {
                             Id = 11,
                             PublicationDate = new DateTime(1825, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Евгений Онегин"
+                            Title = "Евгений Онегин",
+                            UserId = 1
                         },
                         new
                         {
@@ -964,13 +972,15 @@ namespace EF.DataAccessLibrary.Migrations
                         {
                             Id = 13,
                             PublicationDate = new DateTime(1831, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Повести Белкина"
+                            Title = "Повести Белкина",
+                            UserId = 2
                         },
                         new
                         {
                             Id = 14,
                             PublicationDate = new DateTime(1860, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Отцы и дети"
+                            Title = "Отцы и дети",
+                            UserId = 8
                         },
                         new
                         {
@@ -982,7 +992,8 @@ namespace EF.DataAccessLibrary.Migrations
                         {
                             Id = 16,
                             PublicationDate = new DateTime(1892, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Палата № 6"
+                            Title = "Палата № 6",
+                            UserId = 7
                         },
                         new
                         {
@@ -1000,7 +1011,8 @@ namespace EF.DataAccessLibrary.Migrations
                         {
                             Id = 19,
                             PublicationDate = new DateTime(1868, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Идиот"
+                            Title = "Идиот",
+                            UserId = 2
                         },
                         new
                         {
@@ -1012,7 +1024,8 @@ namespace EF.DataAccessLibrary.Migrations
                         {
                             Id = 21,
                             PublicationDate = new DateTime(1855, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Рудин"
+                            Title = "Рудин",
+                            UserId = 1
                         },
                         new
                         {
@@ -1036,7 +1049,8 @@ namespace EF.DataAccessLibrary.Migrations
                         {
                             Id = 25,
                             PublicationDate = new DateTime(1836, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Капитанская дочка"
+                            Title = "Капитанская дочка",
+                            UserId = 1
                         },
                         new
                         {

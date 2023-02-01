@@ -27,8 +27,6 @@ namespace EF.Web.Pages.Books
         public async Task OnGetAsync(string sortOrder, int p = 1, int s = 10)
         {
             NameSort = String.IsNullOrEmpty(sortOrder) ? "name" : "";
-            //NameSort = sortOrder == "name" ? "name_desc" : "name";
-            //DateSort = sortOrder == "Date" ? "date_desc" : "Date";
             DateSort = String.IsNullOrEmpty(sortOrder) ? "date_desc" : "";
             CurrentSort = sortOrder;
             List<Book> data; //= await _bookRepository.GetAllBooksAsync();
